@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    margin-top: -16px;
+    background-color: beige;
+}
+
+#space{
+    position: relative;
+}
