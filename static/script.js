@@ -11,7 +11,9 @@ function position(x,y,deg,path){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    position(200,250,90,"static/beaker_empty.png");
-    position(800,350,45,"static/beaker_empty.png");
+    position(200,250,00,"static/beaker_empty.png");
+    position(500,250,45,"static/beaker_empty.png");
+    position(900,250,90,"static/beaker_empty.png");
+
 
 });
