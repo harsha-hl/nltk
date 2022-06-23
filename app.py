@@ -10,6 +10,7 @@ def hello_world():
     obj1 = {
       "name": "burette",
       "fill": 0,
+      "src": "srwrfrwe",
       "color": "nil",
       "verb": "nil",
       "action": "nil",
@@ -18,6 +19,7 @@ def hello_world():
     obj2 = {
       "name": "beaker",
       "fill": 1,
+      "src": "sfvsd",
       "color": "blue",
       "verb": "pour",
       "action": "nil",
