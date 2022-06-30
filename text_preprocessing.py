@@ -62,7 +62,7 @@ def getObjects(line):
             if bs.find('obj', {'name':i[0]}) != None:
                 objects.append(i[0])
                 if temp=="" and verb_temp!="" :
-                    verbs[i[0]]=verb_temp;
+                    verbs[i[0]]=verb_temp
                 elif temp=="" and position_temp!="":
                     position[i[0]]=position_temp
                 temp=i[0]
