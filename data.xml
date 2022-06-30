@@ -21,7 +21,7 @@
     <pos name= "below" type="down"> below </pos>
     <pos name= "near" type="near"> near </pos>
     <pos name= "in" type="in"> in </pos>
-    <pos name= "inside" type="in"> inside </pos>
+    <pos name= "inside" type="in"> in </pos>
 </position>
 
 <image>
@@ -35,6 +35,12 @@
     <img name="wiregauze" src=""> wiregauze </img>
     <img name="testtube" src="static/test_tube.png"> testtube </img>
 </image>
+
+<verbs>
+    <verb name="pour" deg="45" > pour </verb>
+    <verb name="place" deg="0"> place </verb>
+
+</verbs>
 
 </data>    
 
