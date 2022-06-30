@@ -13,25 +13,17 @@ from nltk import pos_tag
 from nltk.probability import FreqDist
 from bs4 import BeautifulSoup
 
+global text
+text = "Place stearic acid in a testtube boiling over a bunsen burner. Then put a testtube in the roundbottomflask. Then put a pipette in burette. Then pour the contents of the wiregauze into the tripodstand."
+
 def getObjects(line):
-    #print(word_tokenize(text))
     line = re.sub(r"[^a-zA-Z0-9]", " ", line.lower())
     words = line.split()
-    #print("\n\nAfter tokenizing and converting all text to lowercase-\n ")
-    #print(words)
-
-
-    #print(stopwords.words("english"))
+    
     stop_words = set(stopwords.words('english'))
     filtered_sentence = [w for w in words if not w.lower() in stop_words]
-    #print("\n\nAfter removing stop-words-\n")
-    #print(filtered_sentence)
-
-    #print("\n\nExtracting root word-\n")
-    """stemmed = [PorterStemmer().stem(w) for w in words]
-    print(stemmed)"""
+    
     lemmed = [WordNetLemmatizer().lemmatize(w) for w in filtered_sentence]
-    #print(lemmed)
 
     print("\n\nPOS tagged-\n")
     tagged = pos_tag(words)   #should have been lemmed not words
@@ -45,8 +37,6 @@ def getObjects(line):
         data = f.read()
     bs = BeautifulSoup(data, "xml")
 
-    position_words = ['under', 'over', 'above', 'below', 'near', 'towards']
-    apparatus = ["beaker", "burette", "pipette", "bunsenburner", "burner", "roundbottomflask", "conicalflask", "tripodstand", "wiregauze","testtube"]
     objects =[]
     position={}
     verbs={}
@@ -84,7 +74,7 @@ def getObjects(line):
                 verb_temp =i[0];
     
     x=[]
-    print("\n\n\nobj,pos,verb,count",objects,position,verbs,count)
+    print("\n\n\nobj,pos,verb,count",verbs)
 
    
     for i in range(count):
@@ -98,8 +88,7 @@ def getObjects(line):
             colour ="default"
             pos= position[objects[i]]
             print("Position is:",pos)
-            verb = verbs[objects[i]]
-            
+            verb = verbs[objects[i]]            
             
         except:
            pass
@@ -109,13 +98,14 @@ def getObjects(line):
         
         print(x)
     return x
-    
+
+def sen():
+    abc = sent_tokenize(text)
+    sent_len=len(abc)
+    return(sent_len) 
 
 
 def main():         
-    text = "Place stearic acid in a testtube boiling over a bunsen burner. "
-    #print("\nBefore processing-\n")
-    #print(text)
     sentence = sent_tokenize(text)
     print(sent_tokenize(text))
     obj=[]
