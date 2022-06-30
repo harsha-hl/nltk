@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+   
+<data>
+<noun>
+    <obj name="beaker"> beaker </obj>
+    <obj name="burette"> burette </obj>
+    <obj name="pipette"> pipette </obj>
+    <obj name="burner"> bunsenburner </obj>
+    <obj name="roundbottomflask"> roundbottomflask </obj>
+    <obj name="conicalflask"> conicalflask </obj>
+    <obj name="tripodstand"> tripodstand </obj>
+    <obj name="wiregauze"> wiregauze </obj>
+    <obj name="testtube"> testtube </obj>
+    <obj name="paper"> paper </obj>
+</noun>
+<position>
+    <pos name= "under" type="down"> under </pos>
+    <pos name= "over" type="up"> over </pos>
+    <pos name= "above" type="up"> above </pos>
+    <pos name= "below" type="down"> below </pos>
+    <pos name= "near" type="near"> near </pos>
+    <pos name= "in" type="in"> in </pos>
+    <pos name= "inside" type="in"> inside </pos>
+</position>
+
+<image>
+    <img name="beaker" src="static/beaker.png"> beaker </img>
+    <img name="burette" src="static/burette.png"> burette </img>
+    <img name="pipette" src=""> pipette </img>
+    <img name="burner" src="static/bunsen_burner.png"> bunsenburner </img>
+    <img name="roundbottomflask" src="static/round_bottom_flask.png"> roundbottomflask </img>
+    <img name="conicalflask" src="static/conical.png"> conicalflask </img>
+    <img name="tripodstand" src="static/tripod.png"> tripodstand </img>
+    <img name="wiregauze" src=""> wiregauze </img>
+    <img name="testtube" src="static/test_tube.png"> testtube </img>
+</image>
+
+</data>    
+
