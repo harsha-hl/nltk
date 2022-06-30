@@ -14,7 +14,7 @@ from nltk.probability import FreqDist
 from bs4 import BeautifulSoup
 
 global text
-text = "Place stearic acid in a testtube boiling over a bunsen burner. Then put a testtube in the roundbottomflask. Then put a pipette in burette. Then pour the contents of the wiregauze into the tripodstand."
+text = "Place stearic acid in a testtube boiling over a bunsen burner. Then put a testtube in the roundbottomflask. Then put a beaker in burette. Then pouring the contents of the testtube into the conicalflask."
 
 def getObjects(line):
     line = re.sub(r"[^a-zA-Z0-9]", " ", line.lower())
