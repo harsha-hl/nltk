@@ -46,7 +46,7 @@ def getObjects(line):
     verb_temp=""
     positionx_temp =""
     positiony_temp =""
-    verb="default";posx="0"; flag=0;posy="0"
+    verb="default";posx="200"; flag=0;posy="-600"
 
 
     for i in tagged:
@@ -105,7 +105,7 @@ def getObjects(line):
 
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         pos="default";verb="default"
-        
+    
         print(x)
     return x
 
