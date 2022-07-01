@@ -14,7 +14,15 @@ from nltk.probability import FreqDist
 from bs4 import BeautifulSoup
 
 global text
-text = "on a burner, place a testtube below steric acid. conicalflask with "
+text = '''Pour dilute HCl from a beaker into a testtube containing salt solution. 
+    No white precipitate formed indicating absence of Pb2+. Add H2S from beaker to testtube. 
+    Black precipitate is formed indicating presence of Cu2+ or Pb2+.
+    Pour HNO3 from conicalflask to testtube containing precipitate.
+    Precipitate dissolves and solution in testtube turns bluishgreen.
+    Divide the solution into two parts and add NH4OH solution from beaker to testtube containing one part. 
+    Solution in testtube turns deepblue confirming presence of Cu2+.
+    Add K4[Fe(CN)6] solution from conicalflask to testtube containing second part. 
+    Chocolate brown precipitate of Copper ferrocyanide is formed in testtube confirming the presence of Cu2+ ions.'''
 
 def getObjects(line):
     line = re.sub(r"[^a-zA-Z0-9]", " ", line.lower())
