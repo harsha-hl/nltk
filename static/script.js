@@ -121,5 +121,5 @@ function decodeSentence()
                     position(x,y,z,sentence[p].src);
                 }
     }
-    x+=300; 
+  //  x+=300; 
 }
