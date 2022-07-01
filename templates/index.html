@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="static/styles.css">
     <script src="../static/script.js" type="text/javascript"></script>
 </head>
-<body style="background-color:cyan;">
+<body>
     <input type="hidden" id="myData" value="{{objs}}">
+    <input type="hidden" id="para" value="{{para}}">
+
     <div id="space">
-        <p>Hello World!</p>
-        {% for obj in objs %}
-            <p>{{obj}}</p>
-        {% endfor %}
+        <h1 class="heading">Chemistry Exp</h1>
+        <p id="statement"></p>
+    </div>
+    <div>
+        <button onclick="prevSentence()" class="butn">Previous</button>
+        <button onclick="nextSentence()" class="butn">Next</button>
     </div>
     <!--
     <img src="C:\Users\Ananya\OneDrive\Pictures\conical.png" height="200" width="150">

@@ -2,8 +2,46 @@ body{
     margin: 0;
     margin-top: -16px;
     background-color: beige;
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+
+}
+
+.heading{
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    color: #153519;
+    margin: 0 ;
+    font-size: 50px;
+    padding-top: 30px;
+}
+
+.butn{
+    font-weight: lighter;
+    border: 1px solid #80d741;
+    padding: 15px 30px;
+    font-size: 30px;
+    background-color: #80d741;
+    border-radius: 5px;
+    color: white;
+    margin: 40px 240px 0 300px;
+    /* margin: 100px 0 0 193px; */
+    transition: transform 0.5s ease;
+}
+
+.butn:hover{
+    transition-duration: 0.5s;
+    transform: translateY(-5px);
+    cursor: pointer;
+    background-color: white;
+    color: #80d741;
 }
 
 #space{
     position: relative;
+}
+
+#statement{
+    text-align: center;
+    font-size: 35px;
 }

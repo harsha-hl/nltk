@@ -1,3 +1,4 @@
+# FLASK_APP=main.py FLASK_ENV=development flask run
 import text_preprocessing 
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, jsonify
@@ -9,6 +10,10 @@ app = Flask(__name__)
 def hello_world():
   objects = []    # a Python object (dict):
   new=[]
+  para = '''Place stearic acid in a testtube boiling over a bunsen burner.
+            Then put a testtube in the roundbottomflask. 
+            Then put a beaker in burette.
+            Then pouring the contents of the testtube into the conicalflask.'''
   #length = text_preprocessing.sen()    #var is the no of sentences in the paragraph
   qwe=text_preprocessing.main()   # qwe={(name:testtube,pos:up),(name:beaker,pos:down)}
   var = text_preprocessing.sen()
@@ -23,7 +28,7 @@ def hello_world():
   print("\n\n\neeeeeeeeeeeeee\n\n\n",new)
     
   #return render_template("index.html", objs = objects)
-  return render_template("index.html", objs = new)  
+  return render_template("index.html", objs = new, para=para)  
       
   
   
