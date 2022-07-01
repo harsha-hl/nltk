@@ -14,7 +14,7 @@ from nltk.probability import FreqDist
 from bs4 import BeautifulSoup
 
 global text
-text = "Place stearic acid in a testtube boiling over a bunsen burner. Then put a testtube in the roundbottomflask. Then put a beaker in burette. Then pouring the contents of the testtube into the conicalflask."
+text = "Place stearic acid in a testtube boiling over a bunsen burner. Then put a testtube in the roundbottomflask. Then put a beaker in burette. Then pour the contents of the testtube into the conicalflask."
 
 def getObjects(line):
     line = re.sub(r"[^a-zA-Z0-9]", " ", line.lower())
@@ -38,13 +38,15 @@ def getObjects(line):
     bs = BeautifulSoup(data, "xml")
 
     objects =[]
-    position={}
+    positionx={}
+    positiony={}
     verbs={}
     count=0
     temp=""
     verb_temp=""
-    position_temp =""
-    verb="default";pos="default"; flag=0
+    positionx_temp =""
+    positiony_temp =""
+    verb="default";posx="0"; flag=0;posy="0"
 
 
     for i in tagged:
@@ -53,8 +55,9 @@ def getObjects(line):
                 objects.append(i[0])
                 if temp=="" and verb_temp!="" :
                     verbs[i[0]]=verb_temp
-                elif temp=="" and position_temp!="":
-                    position[i[0]]=position_temp
+                elif temp=="" and positionx_temp!="":
+                    positionx[i[0]]=positionx_temp
+                    positiony[i[0]]=positiony_temp
                 temp=i[0]
                 count+=1
         elif i[1]=='IN':
@@ -62,11 +65,13 @@ def getObjects(line):
             print("P is:",i[0],p)
             if p != None:
                 if temp!="":
-                    position[temp]= p.get('type')
+                    positionx[temp]= p.get('x')
+                    positiony[temp]= p.get('y')
                     print("type-", p.get('type'))
             
                 else:
-                    position_temp=p.get('type')
+                    positionx_temp=p.get('x')
+                    positiony_temp=p.get('y')
         elif i[1][0]=='V':
             if temp!="":
                 verbs[temp]=i[0]
@@ -79,21 +84,26 @@ def getObjects(line):
    
     for i in range(count):
         print("\nFor ",i,"th object")
+        
+        name=objects[i]
+        print("Object is:" ,objects[i])
+        fill=0
+        img=bs.find('img',{"name": objects[i]})
+        src= img.get('src')
+        colour ="default"
         try:
-            name=objects[i]
-            print("Object is:" ,objects[i])
-            fill=0
-            img=bs.find('img',{"name": objects[i]})
-            src= img.get('src')
-            colour ="default"
-            pos= position[objects[i]]
+            posx= positionx[objects[i]]
+            posy= positiony[objects[i]]
             print("Position is:",pos)
+        except:
+           pass
+        try:
             verb = verbs[objects[i]]            
             
         except:
            pass
 
-        x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"position":pos})
+        x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         pos="default";verb="default"
         
         print(x)

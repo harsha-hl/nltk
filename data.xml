@@ -15,13 +15,13 @@
     <obj name="paper"> paper </obj>
 </noun>
 <position>
-    <pos name= "under" type="down"> under </pos>
-    <pos name= "over" type="up"> over </pos>
-    <pos name= "above" type="up"> above </pos>
-    <pos name= "below" type="down"> below </pos>
+    <pos name= "under" x="200" y="-710"> under </pos>
+    <pos name= "over" x="200" y="-450"> over </pos>
+    <pos name= "above" x="200" y="-450"> above </pos>
+    <pos name= "below" x="200" y="-710"> below </pos>
     <pos name= "near" type="near"> near </pos>
-    <pos name= "in" type="in"> in </pos>
-    <pos name= "inside" type="in"> in </pos>
+    <pos name= "in" x="200" y="-600"> in </pos>
+    <pos name= "inside" x="200" y="-600"> in </pos>
 </position>
 
 <image>
