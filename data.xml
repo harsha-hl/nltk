@@ -11,7 +11,7 @@
     <obj name="conicalflask"> conicalflask </obj>
     <obj name="tripodstand"> tripodstand </obj>
     <obj name="wiregauze"> wiregauze </obj>
-    <obj name="testtube"> testtube </obj>
+    <obj name="tube"> testtube </obj>
     <obj name="paper"> paper </obj>
 </noun>
 <position>
@@ -23,6 +23,7 @@
     <pos name= "in" x="400" y="-600"> in </pos>
     <pos name= "inside" x="400" y="-600"> in </pos>
     <pos name= "on" x="400" y="-450"> on </pos>
+    
 </position>
 
 <image>
@@ -34,7 +35,7 @@
     <img name="conicalflask" src="static/conical.png"> conicalflask </img>
     <img name="tripodstand" src="static/tripod.png"> tripodstand </img>
     <img name="wiregauze" src=""> wiregauze </img>
-    <img name="testtube" src="static/test_tube.png"> testtube </img>
+    <img name="tube" src="static/test_tube.png"> testtube </img>
 </image>
 
 <verbs>

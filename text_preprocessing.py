@@ -7,23 +7,23 @@ import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize
 import re
 from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk import pos_tag
 from nltk.probability import FreqDist
 from bs4 import BeautifulSoup
 
 global text
-text = '''Pour dilute HCl from a beaker into a testtube containing salt solution. 
-    No white precipitate formed indicating absence of Pb2+. 
-    Add H2S from beaker to testtube. 
+text = '''Pour dilute HCl from a beaker into a test tube containing salt solution.
+          No white precipitate formed indicating absence of Pb2+. 
+    Pour H2S from beaker to test tube. 
     Black precipitate is formed indicating presence of Cu2+ or Pb2+.
-    Pour HNO3 from conicalflask to testtube containing precipitate.
-    Precipitate dissolves and solution in testtube turns bluishgreen.
-    Divide the solution into two parts and add NH4OH solution from beaker to testtube containing one part. 
-    Solution in testtube turns deepblue confirming presence of Cu2+.
-    Add K4[Fe(CN)6] solution from conicalflask to testtube containing second part. 
-    Chocolate brown precipitate of Copper ferrocyanide is formed in testtube confirming the presence of Cu2+ ions.'''
+    Pour HNO3 from conicalflask to test tube containing precipitate.
+    Precipitate dissolves and solution in test tube turns bluishgreen.
+    Divide the solution into two parts and pour NH4OH solution from beaker to test tube containing one part. 
+    Solution in test tube turns deepblue confirming presence of Cu2+.
+    Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
+    Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
+    '''
 
 def getObjects(line):
     line = re.sub(r"[^a-zA-Z0-9]", " ", line.lower())
@@ -46,6 +46,7 @@ def getObjects(line):
         data = f.read()
     bs = BeautifulSoup(data, "xml")
 
+    verb_count=0
     objects =[]
     positionx={}
     positiony={}
@@ -53,9 +54,9 @@ def getObjects(line):
     count=0
     temp=""
     verb_temp=""
-    positionx_temp =""
-    positiony_temp =""
-    verb="default";posx="400"; flag=0;posy="-600"
+    positionx_temp ="400"
+    positiony_temp ="-600"
+    verb="default";posx=""; flag=0;posy=""
 
 
     for i in tagged:
@@ -77,8 +78,9 @@ def getObjects(line):
         elif i[1]=='IN':
             p=bs.find('pos',{'name':i[0]})
             print("P is:",i[0],p,temp)
-            print("temp is", temp)
+            
             if p != None:
+                print("temp is IN", temp)
                 if temp!="":
                     print("here 1")
                     positionx[temp]= p.get('x')
@@ -93,17 +95,18 @@ def getObjects(line):
                     positiony_temp=p.get('y')
                     print(positiony_temp,positionx_temp)
 
-        elif i[1][0]=='V':
-            if temp!="":
+        elif i[1][0]=='V' or i[1]=='NNS':
+            if temp!="" and verb_count==0:
                 verbs[temp]=i[0]
-            else:
+            elif verb_count==0:
                 verb_temp =i[0];
-        
+                print("Verb_temp", verb_temp)
+            verb_count+=1
         
     
     x=[]
     
-    print("\n\n\nobj,pos,verb,count",objects)
+    print("\n\n\nobj,pos,verb,count",objects,positionx,positiony,verbs)
 
    
     for i in range(count):
@@ -126,6 +129,9 @@ def getObjects(line):
             
         except:
            pass
+        if posx == "":
+            posx= "400"
+            posy= "-600"
 
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
