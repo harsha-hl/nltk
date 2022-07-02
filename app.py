@@ -10,10 +10,18 @@ app = Flask(__name__)
 def hello_world():
   objects = []    # a Python object (dict):
   new=[]
-  para = '''Place stearic acid in a testtube boiling over a bunsen burner.
-            Then put a testtube in the roundbottomflask. 
-            Then put a beaker in burette.
-            Then pouring the contents of the testtube into the conicalflask.'''
+  para = '''Pour dilute HCl from a beaker into a test tube containing salt solution.
+          No white precipitate formed indicating absence of Pb2+. 
+    Pour H2S from beaker to test tube. 
+    Black precipitate is formed indicating presence of Cu2+ or Pb2+.
+    Pour HNO3 from conicalflask to test tube containing precipitate.
+    Precipitate dissolves and solution in test tube turns bluishgreen.
+    Divide the solution into two parts and pour NH4OH solution from beaker to test tube containing one part. 
+    Solution in test tube turns deepblue confirming presence of Cu2+.
+    Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
+    Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
+    '''
+
   #length = text_preprocessing.sen()    #var is the no of sentences in the paragraph
   qwe=text_preprocessing.main()   # qwe={(name:testtube,pos:up),(name:beaker,pos:down)}
   var = text_preprocessing.sen()
