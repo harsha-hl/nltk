@@ -15,7 +15,8 @@ from bs4 import BeautifulSoup
 
 global text
 text = '''Pour dilute HCl from a beaker into a testtube containing salt solution. 
-    No white precipitate formed indicating absence of Pb2+. Add H2S from beaker to testtube. 
+    No white precipitate formed indicating absence of Pb2+. 
+    Add H2S from beaker to testtube. 
     Black precipitate is formed indicating presence of Cu2+ or Pb2+.
     Pour HNO3 from conicalflask to testtube containing precipitate.
     Precipitate dissolves and solution in testtube turns bluishgreen.
@@ -62,7 +63,7 @@ def getObjects(line):
             if bs.find('obj', {'name':i[0]}) != None:
                 objects.append(i[0])
                 
-                print("temp is",temp)
+                print("temp is NN",temp)
                 if temp=="" and verb_temp!="" :
                     verbs[i[0]]=verb_temp
                 
@@ -71,7 +72,7 @@ def getObjects(line):
                     positionx[i[0]]=positionx_temp
                     positiony[i[0]]=positiony_temp
                 temp=i[0]
-                
+                print("temp is NN2",temp)
                 count+=1
         elif i[1]=='IN':
             p=bs.find('pos',{'name':i[0]})
