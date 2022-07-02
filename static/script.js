@@ -1,7 +1,7 @@
 //flask run -h localhost -p 3000
 //var counter=0;
 var sentence_index = 0, numOfSentences, sentences=[], o, paragraph, toDisplaySentences;
-let x= 100;
+//let x= 100;
 function position(x,y,deg,path){
     const space = document.getElementById("space");
     const img1 = document.createElement('img');
@@ -79,23 +79,23 @@ function decodeSentence()
     for(var p = 0;p<k;p++)       //p is the number of objects in a sentence
     {
         console.log("inside sentence loop"+ sentence[p].name);
-        console.log("sentence[p].pos"+sentence[p].position);
-       // var x=100;
-        //var y=350;
-        var y = -600;
+        console.log("sentence[p].pos bbbbbbb\n\n"+sentence[p].positionx);
+        var x=sentence[p].positionx;
+       
+        var y = sentence[p].positiony;
         var z=00;
               console.log("just here");
-               let result_up = (sentence[p].position).localeCompare("up");   //o[b][p]  or o[b[p]]
-               let result_down = (sentence[p].position).localeCompare("down");
-               let result_inside = (sentence[p].position).localeCompare("in");   //into
+             //  let result_up = (sentence[p].position).localeCompare("up");   //o[b][p]  or o[b[p]]
+              // let result_down = (sentence[p].position).localeCompare("down");
+              // let result_inside = (sentence[p].position).localeCompare("in");   //into
                let result_pour = (sentence[p].verb).localeCompare("pour");
-               if(result_up === 0)
-                {
+               //if(result_up === 0)
+                //{
                     console.log(" heyyy i am in up sentence[p].src"+sentence[p].src);
-                  var t = y+150;
-                 position(x,t,z,sentence[p].src);
-                } 
-                  
+                //  var t = y+150;
+                 position(x,y,z,sentence[p].src);
+             //   } 
+                  /*
               if(result_down === 0)
                 {
                     console.log(" heyyy i am in down sentence[p].src"+sentence[p].src);
@@ -106,7 +106,7 @@ function decodeSentence()
                 {
                     console.log(" heyyy i am in inside sentence[p].src"+sentence[p].src);
                     position(x,(y+50),z,sentence[p].src);
-                }
+                }  */
                 if(result_pour === 0)
                 {
                     console.log(" heyyy i am in pour sentence[p].src"+sentence[p].src);
@@ -115,11 +115,13 @@ function decodeSentence()
                     position((x+70),(y+200),angle,sentence[p].src);
                   // position(x,height,z,o[p].src);
                 }
+                /*
                 if(result_up !== 0 && result_down !==0 && result_pour !== 0 && result_inside!==0)
                 {
                     console.log(" heyyy i am in default sentence[p].src"+sentence[p].src);
                     position(x,y,z,sentence[p].src);
                 }
+                */
     }
   //  x+=300; 
 }
