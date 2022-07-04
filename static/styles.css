@@ -74,17 +74,3 @@ position:relative;
 	padding:30px 10px;
     height:350px;
 }
-
-#apparatus{
-
-    position:absolute;
-	left: 1010px;
-	top: 270px;
-    font-family: 'Merienda', cursive;
-    font-size: larger;
-	transform: translate(-30%,-20%);
-    background-color:rgb(226, 213, 218);
-	border-radius:5px;
-	padding:30px 10px;
-   
-}

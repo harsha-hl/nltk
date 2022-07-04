@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 a = []
 global text
 text = '''Pour dilute HCl from a beaker into a test tube containing salt solution.
-          No white precipitate formed indicating absence of Pb2+. 
+    No white precipitate formed indicating absence of Pb2+. 
     Pour H2S from beaker to test tube. 
     Black precipitate is formed indicating presence of Cu2+ or Pb2+.
     Pour HNO3 from conicalflask to test tube containing precipitate.
@@ -24,6 +24,7 @@ text = '''Pour dilute HCl from a beaker into a test tube containing salt solutio
     Solution in test tube turns deepblue confirming presence of Cu2+.
     Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
     Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
+          
     '''
 
 def getObjects(line):
@@ -133,7 +134,9 @@ def getObjects(line):
         if posx == "":
             posx= "400"
             posy= "-600"
-
+        if verb=='pour':
+            src="static/"+name+"_pour.png"
+            
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
         verb="default"
