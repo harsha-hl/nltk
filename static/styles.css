@@ -45,3 +45,29 @@ body{
     text-align: center;
     font-size: 35px;
 }
+
+
+#formm{
+    position:relative;
+    left: 10px;
+    top: 400px;
+    font-size: smaller;
+}
+#hello{
+    position: relative;
+    left:50px;
+    top:420px;
+}
+
+#boxes
+{
+position:relative;
+	left: 380px;
+	top: 100px;
+    width: 100%;
+	transform: translate(-30%,-20%);
+    background-color:rgb(226, 213, 218);
+	border-radius:5px;
+	padding:30px 10px;
+    height:350px;
+}

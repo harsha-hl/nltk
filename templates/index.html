@@ -18,6 +18,30 @@
         <button onclick="prevSentence()" class="butn">Previous</button>
         <button onclick="nextSentence()" class="butn">Next</button>
     </div>
+
+
+    <form id="formm">
+        json objects
+        <input type="checkbox" id="the_check_box" onclick="checkMe()"/>
+        <!--<p id="msg" style="display:none;">{{objs}}</p>    -->
+        
+    
+    <div id="boxes" style="display:none;" value="{{abc}}">
+       
+       
+        
+        {% for a in abc %}
+            <ul>
+            <li>{{a}}</li>
+            </ul>
+        {% endfor %}
+
+
+    </div>
+       
+   
+      
+    </form>
     <!--
     <img src="C:\Users\Ananya\OneDrive\Pictures\conical.png" height="200" width="150">
     <img src="C:\Users\Ananya\OneDrive\Pictures\test_tube.png" height="200" width="150">
@@ -48,5 +72,18 @@
 <button class="next" onclick="myfunction(this)">Click</button> 
 </div>
 -->
+<p id="hello">apparatuses</p>
 </body>
+
+<script>
+    function checkMe(){
+        var cb = document.getElementById("the_check_box");
+        var text = document.getElementById("boxes");
+        if(cb.checked==true){
+            text.style.display="block";
+        }else{
+            text.style.display="none";
+        }
+    }
+</script>
 </html>

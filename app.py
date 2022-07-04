@@ -10,6 +10,7 @@ app = Flask(__name__)
 def hello_world():
   objects = []    # a Python object (dict):
   new=[]
+  check_box=[] 
   para = '''Pour dilute HCl from a beaker into a test tube containing salt solution.
           No white precipitate formed indicating absence of Pb2+. 
     Pour H2S from beaker to test tube. 
@@ -32,11 +33,12 @@ def hello_world():
         print("this is individual objects in each sent",q)
         objects.append(json.dumps(q))
     new.append(objects)
+    check_box.append(objects)
     objects=[]
   print("\n\n\neeeeeeeeeeeeee\n\n\n",new)
     
   #return render_template("index.html", objs = objects)
-  return render_template("index.html", objs = new, para=para)  
+  return render_template("index.html", objs = new, para=para,abc=check_box)  
       
   
   
