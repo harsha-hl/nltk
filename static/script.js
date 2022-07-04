@@ -76,6 +76,54 @@ function decodeSentence()
 
     var k = sentence.length;                     //sentence has the objects in one sentence
     console.log("len of sentence in next"+k);
+
+
+
+    if(sentence.length===0)
+    {
+      console.log("SNETENCE_INDEXXXXXXX"+sentence_index);
+     // if(sentence_index > 0){
+      //  sentence_index --;
+      let no_object = sentence_index;
+      no_object--;
+       // decodeSentence();
+       if(no_object.length===0)
+       {
+        while(no_object!==0)
+        {
+        no_object--;
+        }
+       }
+       let images1 = Array.prototype.slice.call(document.getElementById("space").getElementsByTagName("img"));
+       for(i=0;i<images1.length;i++)
+          images1[i].remove();
+        let sents = sentences[no_object];
+        var le=sents.length;
+       
+        for(var t=0;t<le;t++)
+        {
+          let result_pournew = (sents[t].verb).localeCompare("pour");
+          if (result_pournew ===0)
+          {
+            console.log("i am in the new pour"+sents[t].name);
+            var znew=-125;
+            var x_newnew=420;
+            var y_newnew=-400;
+            position(x_newnew,y_newnew,znew,sents[t].src); 
+          }
+          else{
+            console.log("i am in the new pos"+sents[t].name);
+          var z=00;
+          var x_new=sents[t].positionx;
+          var y_new=sents[t].positiony;
+          position(x_new,y_new,z,sents[t].src);
+          }
+        }
+     // }
+    }
+     else
+     {
+
     for(var p = 0;p<k;p++)       //p is the number of objects in a sentence
     {
         console.log("inside sentence loop"+ sentence[p].name);
@@ -85,43 +133,35 @@ function decodeSentence()
         var y = sentence[p].positiony;
         var z=00;
               console.log("just here");
-             //  let result_up = (sentence[p].position).localeCompare("up");   //o[b][p]  or o[b[p]]
-              // let result_down = (sentence[p].position).localeCompare("down");
-              // let result_inside = (sentence[p].position).localeCompare("in");   //into
+            
                let result_pour = (sentence[p].verb).localeCompare("pour");
-               //if(result_up === 0)
-                //{
+              
                     console.log(" heyyy i am in up sentence[p].src"+sentence[p].src);
                 //  var t = y+150;
-                 position(x,y,z,sentence[p].src);
+              //   position(x,y,z,sentence[p].src);
              //   } 
-                  /*
-              if(result_down === 0)
-                {
-                    console.log(" heyyy i am in down sentence[p].src"+sentence[p].src);
-                    var f = y-110;
-                    position(x,f,z,sentence[p].src);
-                }
-                if(result_inside === 0)
-                {
-                    console.log(" heyyy i am in inside sentence[p].src"+sentence[p].src);
-                    position(x,(y+50),z,sentence[p].src);
-                }  */
+                  
                 if(result_pour === 0)
                 {
-                    console.log(" heyyy i am in pour sentence[p].src"+sentence[p].src);
-                    var angle = z+ 225;
-                   // var height = y -250 ;
-                    position((x+70),(y+200),angle,sentence[p].src);
-                  // position(x,height,z,o[p].src);
+                  console.log(" heyyy i am in pour sentence[p].src"+sentence[p].src);
+                  var angle = z - 125;
+                 // var new_x = x+70;
+                  //var new_y = y+200;
+                  var new_x=420;
+                  var new_y=-400;
+                  console.log("typeof(x)"+typeof(x));
+                  console.log("ANGLEEEEEE"+angle);
+                  console.log("xxxxxxxxxxxxxxxxxxx"+new_x);
+                  console.log("yyyyyyyyyyyyyyyyyyyyy"+new_y);
+                  
+                  position(new_x,new_y,angle,sentence[p].src);
                 }
-                /*
-                if(result_up !== 0 && result_down !==0 && result_pour !== 0 && result_inside!==0)
-                {
-                    console.log(" heyyy i am in default sentence[p].src"+sentence[p].src);
-                    position(x,y,z,sentence[p].src);
+                else{
+                  console.log(" heyyy i am in  sentence[p].src"+sentence[p].src);
+                   
+                     position(x,y,z,sentence[p].src);
                 }
-                */
     }
   //  x+=300; 
+}
 }
