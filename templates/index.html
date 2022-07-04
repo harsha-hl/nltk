@@ -10,6 +10,10 @@
     <input type="hidden" id="myData" value="{{objs}}">
     <input type="hidden" id="para" value="{{para}}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@592&family=Merienda&display=swap" rel="stylesheet">
+
     <div id="space">
         <h1 class="heading">Chemistry Exp</h1>
         <p id="statement"></p>
@@ -73,6 +77,16 @@
 </div>
 -->
 <p id="hello">apparatuses</p>
+
+
+<div id="apparatus">
+    <h2 >Apparatuses Used</h3>
+    {% for a in instruments %}
+        <ul>
+            <li>{{a}}</li>
+        </ul>
+    {% endfor %}
+</div>
 </body>
 
 <script>

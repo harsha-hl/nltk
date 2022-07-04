@@ -12,6 +12,7 @@ from nltk import pos_tag
 from nltk.probability import FreqDist
 from bs4 import BeautifulSoup
 
+a = []
 global text
 text = '''Pour dilute HCl from a beaker into a test tube containing salt solution.
           No white precipitate formed indicating absence of Pb2+. 
@@ -63,7 +64,7 @@ def getObjects(line):
         if i[1] == 'NN':
             if bs.find('obj', {'name':i[0]}) != None:
                 objects.append(i[0])
-                
+                a.append(i[0])
                 print("temp is NN",temp)
                 if temp=="" and verb_temp!="" :
                     verbs[i[0]]=verb_temp
@@ -139,6 +140,19 @@ def getObjects(line):
     
         print(x)
     return x
+
+
+def apparatus():
+    print(a)
+    b=[]
+    for i in a:
+        if i not in b:
+            b.append(i)
+   # c = ' '.join(b)
+   # print("THIS IS CC\n\n\n    ",c)
+   # return c
+    return b
+
 
 def sen():
     abc = sent_tokenize(text)

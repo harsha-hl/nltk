@@ -26,6 +26,7 @@ def hello_world():
   #length = text_preprocessing.sen()    #var is the no of sentences in the paragraph
   qwe=text_preprocessing.main()   # qwe={(name:testtube,pos:up),(name:beaker,pos:down)}
   var = text_preprocessing.sen()
+  apparatus = text_preprocessing.apparatus() 
   print("this is var",var)
   for i in range(var):    #if return render_template is within this for loop only the objects of first sentence are displayed
     print("this is newest",qwe[i])   #qwe[i] is each sentence
@@ -38,7 +39,7 @@ def hello_world():
   print("\n\n\neeeeeeeeeeeeee\n\n\n",new)
     
   #return render_template("index.html", objs = objects)
-  return render_template("index.html", objs = new, para=para,abc=check_box)  
+  return render_template("index.html", objs = new, para=para,abc=check_box, instruments = apparatus)  
       
   
   
