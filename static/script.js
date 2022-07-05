@@ -295,6 +295,7 @@ function hexToRgb(hex) {
 }
 
 function hexToFilter(hex){
+  //console.log("Hereee in function hex to filter")
   const rgb = hexToRgb(hex);
   const color = new Color(rgb[0], rgb[1], rgb[2]);
   const solver = new Solver(color);
@@ -306,16 +307,29 @@ function hexToFilter(hex){
 //var counter=0;
 var sentence_index = 0, numOfSentences, sentences=[], o, paragraph, toDisplaySentences;
 //let x= 100;
-function position(x,y,deg,path){
+function position(x,y,deg,path,hex_image){
     const space = document.getElementById("space");
     const img1 = document.createElement('img');
     img1.src = path;
+    img1.className = "imagee";
     img1.style.width = "200px";
     img1.style.height = "auto";
     img1.style.position = "absolute";
     img1.style.left = x + "px";
-  //  img1.style.top = y + "px";
-  img1.style.bottom = y+"px";
+  //img1.style.top = y + "px";
+  console.log("In position, hex of image is"+hex_image);
+  var comp=(hex_image).localeCompare("default");
+   if(comp!==0)
+  {
+    var img = document.getElementsByClassName("imagee");
+    img.src = path;
+    console.log("I am changing colour!!!!!");
+    $('.imagee').attr('style', hexToFilter(hex_image));
+  }
+
+    //$('.iii').attr('style', hexToFilter(xx));
+    //$('.image2').attr('style', hexToFilter("#00008b"));
+    img1.style.bottom = y+"px";
     img1.style.transform = "rotate(" + deg + "deg)";
     space.appendChild(img1);
 }
@@ -335,8 +349,8 @@ function nextSentence(){
 }
 
 document.addEventListener("DOMContentLoaded", function (){
-    $('.iii').attr('style', hexToFilter("#ffa000"));
-    $('.image2').attr('style', hexToFilter("#00ff00"));
+    //$('.iii').attr('style', hexToFilter("#00008b"));
+    
     var objs = document.getElementById('myData').value;
     const para = document.getElementById('para').value;
     toDisplaySentences = para.match( /[^\.!\?]+[\.!\?]+/g );
@@ -467,8 +481,9 @@ function decodeSentence()
                 }   */
               //  else{
                   console.log(" heyyy i am in  sentence[p].src"+sentence[p].src);
-                   
-                     position(x,y,z,sentence[p].src);
+                  var hex_image=sentence[p].colour;
+                  console.log("This is hex of image"+hex_image);
+                  position(x,y,z,sentence[p].src,hex_image);
               //  }
     }
   //  x+=300; 

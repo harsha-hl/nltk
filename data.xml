@@ -35,7 +35,7 @@
     <img name="conicalflask" src="static/conical.png"> conicalflask </img>
     <img name="tripodstand" src="static/tripod.png"> tripodstand </img>
     <img name="wiregauze" src=""> wiregauze </img>
-    <img name="tube" src="static/test_tube.png"> testtube </img>
+    <img name="tube" src="static/fullTestTube.png"> testtube </img>
 </image>
 
 <verbs>
