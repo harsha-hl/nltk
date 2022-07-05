@@ -335,15 +335,18 @@ function nextSentence(){
 }
 
 document.addEventListener("DOMContentLoaded", function (){
-    $('.iii').attr('style', hexToFilter("#ffa000"));
+
+$('.iii').attr('style', hexToFilter("#ffa000"));
     $('.image2').attr('style', hexToFilter("#00ff00"));
     var objs = document.getElementById('myData').value;
     const para = document.getElementById('para').value;
     toDisplaySentences = para.match( /[^\.!\?]+[\.!\?]+/g );
 
+
+
     console.log(objs);
     console.log(objs.length);
-
+  
     objs = objs.slice(1, objs.length-1);
     o = [];
     while (objs.length > 0)
@@ -357,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function (){
       while(o[i].length>0)
         {
         senten.push( JSON.parse(o[i].slice(1,o[i].indexOf('}') +1)));
-
+  
         console.log("typeee"+typeof(senten[0]));
        
         o[i] = o[i].slice(o[i].indexOf('}') +4);
@@ -366,7 +369,9 @@ document.addEventListener("DOMContentLoaded", function (){
     }
     console.log(sentences);
     decodeSentence();
-});
+  
+
+  });
 
 function decodeSentence()
 {
