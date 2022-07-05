@@ -43,6 +43,9 @@
     <verb name="place" deg="0"> place </verb>
 
 </verbs>
+<colours>
+    <colour name="green" hex="#368370"> green </colour>
+    <colour name="blue"  hex="#151871"> blue </colour>
 
 </data>    
 

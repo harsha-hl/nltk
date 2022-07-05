@@ -19,9 +19,9 @@ text = '''Pour dilute HCl from a beaker into a test tube containing salt solutio
     Pour H2S from beaker to test tube. 
     Black precipitate is formed indicating presence of Cu2+ or Pb2+.
     Pour HNO3 from conicalflask to test tube containing precipitate.
-    Precipitate dissolves and solution in test tube turns bluishgreen.
+    Precipitate dissolves and solution in test tube turns green.
     Divide the solution into two parts and pour NH4OH solution from beaker to test tube containing one part. 
-    Solution in test tube turns deepblue confirming presence of Cu2+.
+    Solution in test tube turns blue confirming presence of Cu2+.
     Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
     Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
           
@@ -52,13 +52,16 @@ def getObjects(line):
     objects =[]
     positionx={}
     positiony={}
+    colours={}
     verbs={}
     count=0
     temp=""
     verb_temp=""
     positionx_temp ="400"
     positiony_temp ="-600"
+    colour_temp=""
     verb="default";posx=""; flag=0;posy=""
+    colour="default"
 
 
     for i in tagged:
@@ -73,6 +76,8 @@ def getObjects(line):
                 if temp=="" and positiony_temp !="":
                     print("I am Here", temp)
                     positionx[i[0]]=positionx_temp
+                if temp=="" and colour_temp != "":
+                    colours[i[0]] = colour_temp
                     positiony[i[0]]=positiony_temp
                 temp=i[0]
                 print("temp is NN2",temp)
@@ -104,6 +109,15 @@ def getObjects(line):
                 verb_temp =i[0];
                 print("Verb_temp", verb_temp)
             verb_count+=1
+
+        elif i[1]=="JJ":
+            cc = bs.find('colour', {'name':i[0]})
+            if cc != None:
+                if temp!="":
+                    colours[temp]=cc.get('hex')
+                else:
+                    colour_temp= cc.get('hex')
+
         
     
     x=[]
@@ -119,7 +133,11 @@ def getObjects(line):
         fill=0
         img=bs.find('img',{"name": objects[i]})
         src= img.get('src')
-        colour ="default"
+        try:
+            colour = colours[objects[i]]
+        except:
+            pass
+
         try:
             posx= positionx[objects[i]]
             posy= positiony[objects[i]]
@@ -136,6 +154,8 @@ def getObjects(line):
             posy= "-600"
         if verb=='pour':
             src="static/"+name+"_pour.png"
+            posx="420"
+            posy="-500"
             
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
