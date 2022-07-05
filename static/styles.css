@@ -72,7 +72,7 @@ position:relative;
     background-color:rgb(226, 213, 218);
 	border-radius:5px;
 	padding:30px 10px;
-    height:350px;
+    height:auto;
 }
 
 .pixel {

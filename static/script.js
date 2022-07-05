@@ -401,29 +401,29 @@ function decodeSentence()
         }
        }
        let images1 = Array.prototype.slice.call(document.getElementById("space").getElementsByTagName("img"));
-       for(i=0;i<images1.length;i++)
+       for(let i=0;i<images1.length;i++)
           images1[i].remove();
         let sents = sentences[no_object];
         var le=sents.length;
        
         for(var t=0;t<le;t++)
         {
-          let result_pournew = (sents[t].verb).localeCompare("pour");
-          if (result_pournew ===0)
+        //  let result_pournew = (sents[t].verb).localeCompare("pour");
+        /*  if (result_pournew ===0)
           {
             console.log("i am in the new pour"+sents[t].name);
             var znew=-125;
             var x_newnew=420;
             var y_newnew=-400;
             position(x_newnew,y_newnew,znew,sents[t].src); 
-          }
-          else{
+          }    */
+        //  else{
             console.log("i am in the new pos"+sents[t].name);
           var z=0;
           var x_new=sents[t].positionx;
           var y_new=sents[t].positiony;
           position(x_new,y_new,z,sents[t].src);
-          }
+        //  }
         }
      // }
     }
@@ -440,14 +440,17 @@ function decodeSentence()
         var z=0;
               console.log("just here");
             
-               let result_pour = (sentence[p].verb).localeCompare("pour");
+              // let result_pour = (sentence[p].verb).localeCompare("pour");
               
                     console.log(" heyyy i am in up sentence[p].src"+sentence[p].src);
                 //  var t = y+150;
               //   position(x,y,z,sentence[p].src);
              //   } 
                   
-                if(result_pour === 0)
+                
+             
+             /*
+             if(result_pour === 0)
                 {
                   console.log(" heyyy i am in pour sentence[p].src"+sentence[p].src);
                   var angle = z - 125;
@@ -461,12 +464,12 @@ function decodeSentence()
                   console.log("yyyyyyyyyyyyyyyyyyyyy"+new_y);
                   
                   position(new_x,new_y,angle,sentence[p].src);
-                }
-                else{
+                }   */
+              //  else{
                   console.log(" heyyy i am in  sentence[p].src"+sentence[p].src);
                    
                      position(x,y,z,sentence[p].src);
-                }
+              //  }
     }
   //  x+=300; 
 }
