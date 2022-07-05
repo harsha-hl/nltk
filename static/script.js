@@ -349,14 +349,9 @@ function nextSentence(){
 }
 
 document.addEventListener("DOMContentLoaded", function (){
-<<<<<<< HEAD
-    //$('.iii').attr('style', hexToFilter("#00008b"));
-    
-=======
 
 $('.iii').attr('style', hexToFilter("#ffa000"));
     $('.image2').attr('style', hexToFilter("#00ff00"));
->>>>>>> 57523757a100fbc84ac8114c7e9316cfabaa863e
     var objs = document.getElementById('myData').value;
     const para = document.getElementById('para').value;
     toDisplaySentences = para.match( /[^\.!\?]+[\.!\?]+/g );
