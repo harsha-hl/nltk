@@ -273,7 +273,7 @@ class Solver {
     function fmt(idx, multiplier = 1) {
       return Math.round(filters[idx] * multiplier);
     }
-    return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%);`;
+    return `invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%)`;
   }
 }
 
@@ -311,24 +311,11 @@ function position(x,y,deg,path,hex_image){
     const space = document.getElementById("space");
     const img1 = document.createElement('img');
     img1.src = path;
-    img1.className = "imagee";
-    img1.style.width = "200px";
-    img1.style.height = "auto";
+    // img1.style.width = "200px";
+    img1.style.height = "200px";
     img1.style.position = "absolute";
     img1.style.left = x + "px";
-  //img1.style.top = y + "px";
-  console.log("In position, hex of image is"+hex_image);
-  var comp=(hex_image).localeCompare("default");
-   if(comp!==0)
-  {
-    var img = document.getElementsByClassName("imagee");
-    img.src = path;
-    console.log("I am changing colour!!!!!");
-    $('.imagee').attr('style', hexToFilter(hex_image));
-  }
-
-    //$('.iii').attr('style', hexToFilter(xx));
-    //$('.image2').attr('style', hexToFilter("#00008b"));
+    img1.style.filter = hexToFilter(hex_image);
     img1.style.bottom = y+"px";
     img1.style.transform = "rotate(" + deg + "deg)";
     space.appendChild(img1);

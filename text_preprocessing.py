@@ -61,7 +61,7 @@ def getObjects(line):
     positiony_temp ="-600"
     colour_temp=""
     verb="default";posx=""; flag=0;posy=""
-    colour="default"
+    colour="#cccccc"
 
 
     for i in tagged:

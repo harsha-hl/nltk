@@ -1,4 +1,4 @@
-# FLASK_APP=main.py FLASK_ENV=development flask run
+# FLASK_APP=app.py FLASK_ENV=development flask run
 import text_preprocessing 
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, jsonify
