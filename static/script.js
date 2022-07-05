@@ -428,7 +428,13 @@ function decodeSentence()
           var z=0;
           var x_new=sents[t].positionx;
           var y_new=sents[t].positiony;
-          position(x_new,y_new,z,sents[t].src);
+
+
+          var hex_image_new=sents[t].colour;
+                  console.log("This is hex of image"+hex_image_new);
+                  position(x_new,y_new,z,sents[t].src,hex_image_new);
+
+          //position(x_new,y_new,z,sents[t].src);
         //  }
         }
      // }
