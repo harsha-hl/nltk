@@ -438,6 +438,7 @@ function decodeSentence()
                   var hex_image=sentence[p].colour;
                   console.log("This is hex of image"+hex_image);
                   position(x,y,z,sentence[p].src,hex_image);
+                  
               
     }
   
