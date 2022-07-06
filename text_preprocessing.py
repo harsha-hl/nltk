@@ -15,12 +15,12 @@ from bs4 import BeautifulSoup
 a = []
 global text
 text = '''Pour dilute HCl from a beaker into a test tube containing salt solution.
-    No white precipitate formed indicating absence of Pb2+. 
+    No white precipitate formed in test tube indicating absence of Pb2+. 
     Pour H2S from beaker to test tube. 
-    Black precipitate is formed indicating presence of Cu2+ or Pb2+.
+    Black precipitate is formed in test tube indicating presence of Cu2+ or Pb2+.
     Pour HNO3 from conicalflask to test tube.
     Solution in test tube turns green.
-    Divide the solution into two parts and pour NH4OH solution from beaker to test tube containing one part. 
+    Divide the solution into two and pour NH4OH solution from beaker to test tube containing one part. 
     Solution in test tube turns blue confirming presence of Cu2+.
     Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
     Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
@@ -72,13 +72,15 @@ def getObjects(line):
                 print("temp is NN",temp)
                 if temp=="" and verb_temp!="" :
                     verbs[i[0]]=verb_temp
-                
                 if temp=="" and positiony_temp !="":
                     print("I am Here", temp)
                     positionx[i[0]]=positionx_temp
-                if temp=="" and colour_temp != "":
-                    colours[i[0]] = colour_temp
                     positiony[i[0]]=positiony_temp
+                if temp=="" and colour_temp != "":
+                    print("Temp is", temp)
+                    print("Colour temp  is ", colour_temp)
+                    colours[i[0]] = colour_temp
+                    colour_temp=""                    
                 temp=i[0]
                 print("temp is NN2",temp)
                 count+=1
@@ -112,6 +114,7 @@ def getObjects(line):
 
         elif i[1]=="JJ":
             cc = bs.find('colour', {'name':i[0]})
+
             if cc != None:
                 if temp!="":
                     colours[temp]=cc.get('hex')
@@ -119,7 +122,7 @@ def getObjects(line):
                     colour_temp= cc.get('hex')
     x=[]
     
-    print("\n\n\nobj,pos,verb,count",objects,positionx,positiony,verbs)
+    print("\n\n\nobj,pos,verb,colours",objects,positionx,positiony,verbs,colours)
 
    
     for i in range(count):
@@ -132,8 +135,9 @@ def getObjects(line):
         src= img.get('src')
         try:
             colour = colours[objects[i]]
+            print("COLOURRRR ", colour)
         except:
-            pass
+            colour="#cccccc"
 
         try:
             posx= positionx[objects[i]]
@@ -151,15 +155,18 @@ def getObjects(line):
             posy= "-600"
         if verb=='pour':
             src="static/"+name+"_pour.png"
-            posx="420"
+            posx="421"
             posy="-500"
         if name=='precipitate':
-            posx="390"
-            posy="-691"
+            posx="406"
+            posy="-593"
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
         verb="default"
-    
+        if i==1:
+            temp_array = x[1]
+            x[1]= x[0]
+            x[0]=temp_array
         print(x)
     return x
 

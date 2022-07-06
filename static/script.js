@@ -307,33 +307,33 @@ function hexToFilter(hex){
 var sentence_index = 0, numOfSentences, sentences=[], o, paragraph, toDisplaySentences;
 //let x= 100;
 function position(x,y,deg,path,hex_image){
-    const space = document.getElementById("space");
-    const img1 = document.createElement('img');
-    img1.src = path;
-    // img1.style.width = "200px";
-  //  img1.style.height = "200px";
-   //img1.style.height = "auto";
-   var width_ppt = (path).localeCompare("static/pptTestTube.png");
-   if(width_ppt===0)
-   {
-    console.log("i am in the width loop");
-    img1.style.width = "50px";
-    img1.style.height = "20px";
-   }
-   else
-   {
-    console.log("i am in the else loop");
-    img1.style.height = "200px";
-    img1.style.width = "auto";
-   }
-  
-  // img1.style.width = "auto";
-    img1.style.position = "absolute";
-    img1.style.left = x + "px";
-    img1.style.filter = hexToFilter(hex_image);
-    img1.style.bottom = y+"px";
-    img1.style.transform = "rotate(" + deg + "deg)";
-    space.appendChild(img1);
+  const space = document.getElementById("space");
+  const img1 = document.createElement('img');
+  img1.src = path;
+  // img1.style.width = "200px";
+//  img1.style.height = "200px";
+ //img1.style.height = "auto";
+ var width_ppt = (path).localeCompare("static/pptTestTube.png");
+ if(width_ppt===0)
+ {
+  console.log("i am in the width loop");
+  img1.style.width = "37px";
+  img1.style.height = "20px";
+ }
+ else
+ {
+  console.log("i am in the else loop");
+  img1.style.height = "200px";
+  img1.style.width = "auto";
+ }
+
+// img1.style.width = "auto";
+  img1.style.position = "absolute";
+  img1.style.left = x + "px";
+  img1.style.filter = hexToFilter(hex_image);
+  img1.style.bottom = y+"px";
+  img1.style.transform = "rotate(" + deg + "deg)";
+  space.appendChild(img1);
 }
 
 function prevSentence(){
