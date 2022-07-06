@@ -306,7 +306,7 @@ function hexToFilter(hex){
 //var counter=0;
 var sentence_index = 0, numOfSentences, sentences=[], o, paragraph, toDisplaySentences;
 //let x= 100;
-function position(x,y,deg,path,hex_image){
+function position(x,y,deg,path,hex_image, len){
   const space = document.getElementById("space");
   const img1 = document.createElement('img');
   img1.src = path;
@@ -332,6 +332,10 @@ function position(x,y,deg,path,hex_image){
   img1.style.left = x + "px";
   img1.style.filter = hexToFilter(hex_image);
   img1.style.bottom = y+"px";
+  img1.setAttribute('id', 'im');
+  //img1.style.paddingBottom="200px";
+  //img1.style.paddingLeft="100px";
+  //img1.style.transform = "scale("+ (1/len)*2 +")";
   img1.style.transform = "rotate(" + deg + "deg)";
   space.appendChild(img1);
 }
@@ -394,6 +398,8 @@ function decodeSentence()
     let images = Array.prototype.slice.call(document.getElementById("space").getElementsByTagName("img"));
     for(let i=0;i<images.length;i++)
       images[i].remove();
+    
+    document.getElementById("val").innerHTML='';
     document.getElementById("statement").innerHTML = toDisplaySentences[sentence_index];
     let sentence = sentences[sentence_index];
     console.log("DEBUGGGgGGGGGGGGG");
@@ -404,6 +410,15 @@ function decodeSentence()
     var k = sentence.length;                     //sentence has the objects in one sentence
     console.log("len of sentence in next"+k);
 
+    for(let i=0; i<k; i++)
+    {
+      var name=sentence[i].name;
+      var verb=sentence[i].verb;
+      
+      document.getElementById("val").innerHTML+='<br />'+'Name: '+name+'<br />';
+      document.getElementById("val").innerHTML+='Verb: '+verb+'<br />';
+      document.getElementById("val").innerHTML+=JSON.stringify(sentence, null, 2);
+    }
 
 
     if(sentence.length===0)
@@ -434,7 +449,7 @@ function decodeSentence()
 
           var hex_image_new=sents[t].colour;
                   console.log("This is hex of image"+hex_image_new);
-                  position(x_new,y_new,z,sents[t].src,hex_image_new);
+                  position(x_new,y_new,z,sents[t].src,hex_image_new, k);
         }
     }
      else
@@ -453,7 +468,7 @@ function decodeSentence()
                   console.log(" heyyy i am in  sentence[p].src"+sentence[p].src);
                   var hex_image=sentence[p].colour;
                   console.log("This is hex of image"+hex_image);
-                  position(x,y,z,sentence[p].src,hex_image);
+                  position(x,y,z,sentence[p].src,hex_image, k);
                   
               
     }
