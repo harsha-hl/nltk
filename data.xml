@@ -13,6 +13,7 @@
     <obj name="wiregauze"> wiregauze </obj>
     <obj name="tube"> testtube </obj>
     <obj name="paper"> paper </obj>
+    <obj name="precipitate">ppt </obj>
 </noun>
 <position>
     <pos name= "under" x="400" y="-710"> under </pos>
@@ -36,6 +37,7 @@
     <img name="tripodstand" src="static/tripod.png"> tripodstand </img>
     <img name="wiregauze" src=""> wiregauze </img>
     <img name="tube" src="static/fullTestTube.png"> testtube </img>
+    <img name="precipitate" src="static/pptTestTube.png"> ppt </img>
 </image>
 
 <verbs>
@@ -46,6 +48,10 @@
 <colours>
     <colour name="green" hex="#368370"> green </colour>
     <colour name="blue"  hex="#151871"> blue </colour>
+    <colour name="black" hex="#00000"> black </colour>
+</colours>
 
+<others>
+    
 </data>    
 

@@ -18,7 +18,7 @@ text = '''Pour dilute HCl from a beaker into a test tube containing salt solutio
     No white precipitate formed indicating absence of Pb2+. 
     Pour H2S from beaker to test tube. 
     Black precipitate is formed indicating presence of Cu2+ or Pb2+.
-    Pour HNO3 from conicalflask to test tube containing precipitate.
+    Pour HNO3 from conicalflask to test tube.
     Precipitate dissolves and solution in test tube turns green.
     Divide the solution into two parts and pour NH4OH solution from beaker to test tube containing one part. 
     Solution in test tube turns blue confirming presence of Cu2+.
@@ -65,6 +65,7 @@ def getObjects(line):
 
 
     for i in tagged:
+
         if i[1] == 'NN':
             if bs.find('obj', {'name':i[0]}) != None:
                 objects.append(i[0])
@@ -117,6 +118,7 @@ def getObjects(line):
                     colours[temp]=cc.get('hex')
                 else:
                     colour_temp= cc.get('hex')
+        
 
 
  
@@ -149,14 +151,16 @@ def getObjects(line):
             
         except:
            pass
-        if posx == "":
+        if posx == "" or posy=="":
             posx= "400"
             posy= "-600"
         if verb=='pour':
             src="static/"+name+"_pour.png"
             posx="420"
             posy="-500"
-            
+        if name=='precipitate':
+            posx="390"
+            posy="-691"
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
         verb="default"
@@ -171,9 +175,7 @@ def apparatus():
     for i in a:
         if i not in b:
             b.append(i)
-   # c = ' '.join(b)
-   # print("THIS IS CC\n\n\n    ",c)
-   # return c
+
     return b
 
 
