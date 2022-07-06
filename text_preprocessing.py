@@ -118,10 +118,6 @@ def getObjects(line):
                     colours[temp]=cc.get('hex')
                 else:
                     colour_temp= cc.get('hex')
-        
-
-
- 
     x=[]
     
     print("\n\n\nobj,pos,verb,count",objects,positionx,positiony,verbs)
