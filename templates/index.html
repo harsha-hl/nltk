@@ -42,22 +42,22 @@
 
 
     <form id="formm">
-        json objects
-        <input type="checkbox" id="the_check_box" onclick="checkMe()"/>
+        <label class="switch">
+            <input type="checkbox"  id="the_check_box" onclick="checkMe()">
+            <span class="slider round"></span>
+        </label>
         <!--<p id="msg" style="display:none;">{{objs}}</p>    -->
         
     
     <div id="boxes" style="display:none;" value="{{abc}}">
-       
-       
-        
-        {% for a in abc %}
+        <h2 >Apparatuses Used</h3>
+        <p id="val"> </p>
+        <!--{% for a in abc %}
             <ul>
             <li>{{a}}</li>
             </ul>
-        {% endfor %}
-
-
+        {% endfor %}-->
+        
     </div>
        
    
@@ -92,18 +92,18 @@
 <div>
 <button class="next" onclick="myfunction(this)">Click</button> 
 </div>
--->
+
 <p id="hello">apparatuses</p>
-
-
 <div id="apparatus">
-    <h2 >Apparatuses Used</h3>
+    
     {% for a in instruments %}
         <ul>
             <li>{{a}}</li>
         </ul>
     {% endfor %}
 </div>
+-->
+
 </body>
 
 <script>
