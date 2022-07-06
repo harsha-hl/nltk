@@ -19,12 +19,11 @@ text = '''Pour dilute HCl from a beaker into a test tube containing salt solutio
     Pour H2S from beaker to test tube. 
     Black precipitate is formed indicating presence of Cu2+ or Pb2+.
     Pour HNO3 from conicalflask to test tube.
-    Precipitate dissolves and solution in test tube turns green.
+    Solution in test tube turns green.
     Divide the solution into two parts and pour NH4OH solution from beaker to test tube containing one part. 
     Solution in test tube turns blue confirming presence of Cu2+.
     Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
     Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
-          
     '''
 
 def getObjects(line):
