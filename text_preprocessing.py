@@ -155,8 +155,8 @@ def getObjects(line):
             posy= "-600"
         if verb=='pour':
             src="static/"+name+"_pour.png"
-            posx="421"
-            posy="-500"
+            posx="210"        #
+            posy="-425"       #
         if name=='precipitate':
             posx="406"
             posy="-593"
