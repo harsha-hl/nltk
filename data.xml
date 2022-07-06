@@ -48,7 +48,7 @@
 <colours>
     <colour name="green" hex="#368370"> green </colour>
     <colour name="blue"  hex="#151871"> blue </colour>
-    <colour name="black" hex="#00000"> black </colour>
+    <colour name="black" hex="#565656"> black </colour>
     <colour name="brown" hex="#5C4033"> brown </colour>
 </colours>
 
