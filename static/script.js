@@ -340,6 +340,48 @@ function position(x,y,deg,path,hex_image, len){
   space.appendChild(img1);
 }
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+function position_new(x,y,deg,path, len)
+{
+  const space2 = document.getElementById("space");
+  const img2 = document.createElement('img');
+  img2.src = path;
+  // img1.style.width = "200px";
+//  img1.style.height = "200px";
+ //img1.style.height = "auto";
+ var width_ppt = (path).localeCompare("static/pptTestTube.png");   //put some else
+ if(width_ppt===0)
+ {
+  console.log("i am in the width loop");
+  img2.style.width = "37px";
+  img2.style.height = "20px";
+ }
+ else
+ {
+  console.log("i am in the else loop");
+  img2.style.height = "200px";
+  img2.style.width = "auto";
+ }
+
+// img1.style.width = "auto";
+  img2.style.position = "absolute";
+  img2.style.left = x + "px";
+ // img2.style.filter = hexToFilter(hex_image);
+  img2.style.bottom = y+"px";
+  img2.setAttribute('id', 'im');
+  //img1.style.paddingBottom="200px";
+  //img1.style.paddingLeft="100px";
+  //img1.style.transform = "scale("+ (1/len)*2 +")";
+  img2.style.transform = "rotate(" + deg + "deg)";
+  space2.appendChild(img2);
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 function prevSentence(){
   if(sentence_index > 0){
     sentence_index --;
@@ -470,6 +512,22 @@ function decodeSentence()
                   console.log("This is hex of image"+hex_image);
                   position(x,y,z,sentence[p].src,hex_image, k);
                   
+
+
+                  var ppt_outline = (sentence[p].name).localeCompare("precipitate");
+                 var a_verb = (sentence[p].verb).localeCompare("pour");
+                 if(ppt_outline!==0)      /////////////////////////////////////////////////////////
+                 {
+                   if(a_verb!==0)
+                   {
+                     var src_noverb_new="static/new_"+sentence[p].name+".png";
+                     position_new(x,y,z,src_noverb_new,k);
+                   }
+                   else{
+                   var src_new = "static/new_"+sentence[p].name+"_pour.png";    /////////////////////////////////////////////////////////
+                 position_new((x),y,z,src_new, k);  ///////////////////////////////////////////////////////
+                   }
+               }
               
     }
   
