@@ -60,7 +60,7 @@ def getObjects(line):
     count=0
     temp=""
     verb_temp=""
-    positionx_temp ="400"
+    positionx_temp ="700"
     positiony_temp ="-600"
     colour_temp=""
     verb="default";posx=""; flag=0;posy=""
@@ -155,14 +155,14 @@ def getObjects(line):
         except:
            pass
         if posx == "" or posy=="":
-            posx= "400"
+            posx= "700"
             posy= "-600"
         if verb=='pour':
             src="static/"+name+"_pour.png"
-            posx="210"        #
+            posx="510"        #
             posy="-425"       #
         if name=='precipitate':
-            posx="406"
+            posx="706"
             posy="-593"
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
