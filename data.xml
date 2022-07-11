@@ -16,6 +16,9 @@
     <obj name="precipitate">ppt </obj>
     <obj name="dish"> petri </obj>
     <obj name="container"> container </obj>
+    <obj name="gas"> gas </obj>
+    <obj name="ring"> ring </obj>
+    <obj name="rod"> rod </obj>
 </noun>
 <position>
     <pos name= "under" x="700" y="-710"> under </pos>
@@ -42,11 +45,15 @@
     <img name="precipitate" src="static/pptTestTube.png"> ppt </img>
     <img name="dish" src="static/beaker.png"> petri </img>
     <img name="container" src="static/beaker.png"> container </img>
+    <img name="gas" src="static/beaker.png"> gas </img>
+    <img name="ring" src="static/beaker.png"> ring </img>
+    <img name="rod" src="static/beaker.png"> rod </img>
 </image>
 
 <verbs>
     <verb name="pour" deg="45" > pour </verb>
     <verb name="place" deg="0"> place </verb>
+    <verb name="add"> add </verb>
 
 </verbs>
 <colours>
@@ -54,7 +61,10 @@
     <colour name="blue"  hex="#151871"> blue </colour>
     <colour name="black" hex="#565656"> black </colour>
     <colour name="brown" hex="#5C4033"> brown </colour>
+    <colour name="white" hex="#ffffff"> white </colour>
+    <colour name="yellow" hex="#ffff00"> yellow </colour>
 </colours>
+
 
 </data>    
 
