@@ -63,6 +63,8 @@
     <colour name="brown" hex="#5C4033"> brown </colour>
     <colour name="white" hex="#ffffff"> white </colour>
     <colour name="yellow" hex="#ffff00"> yellow </colour>
+    <colour name="purple" hex="#A020F0"> purple </colour>
+
 </colours>
 
 

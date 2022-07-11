@@ -14,19 +14,22 @@ from bs4 import BeautifulSoup
 
 
 a = []
-global text, text2
-text2 = '''Pour dilute HCl from a beaker into a test tube containing salt solution.
-    No white precipitate formed in test tube indicating absence of Pb2+. 
+global text, text2, text3
+
+text = '''
+Pour dilute HCl from a beaker into a test tube containing salt solution.
+    No precipitate formed in test tube indicating absence of Pb2+. 
     Pour H2S from beaker to test tube. 
     Black precipitate is formed in test tube indicating presence of Cu2+ or Pb2+.
-    Pour HNO3 from conicalflask to test tube.
+    Pour HNO3 from conical flask to test tube.
     Solution in test tube turns green.
     Divide the solution into two and pour NH4OH solution from beaker to test tube containing one part. 
     Solution in test tube turns blue confirming presence of Cu2+.
     Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
     Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
     '''
-text = '''
+
+text3 = '''
  Add a few drops of dilute H2SO4 (sulfuric acid) from conical flask to a small quantity of the salt in a test tube.
 Light brown gas with a pungent smell is evolved from the test tube.
 The anion maybe Nitrate.
@@ -50,6 +53,13 @@ Green coloured flame confirms Ba2+ as cation.
 
 '''
 
+text2 = '''
+Pour few drops of Phenolpthalein solution from container to conical flask containing HCl.
+Fill the burette with NaOH (titrant) of known concentration and place it over the conical flask. 
+Slowly add NaOH solution from burette to the conical flask till equivalence point is reached and HCl acid is completely neutralized. 
+Upon neutralisation, the solution in conical flask becomes purple in colour confirming the end point of the reaction.
+The concentration of HCl analyte is calculated by measuring the amount of NaOH added. 
+'''
 
 
 
