@@ -437,6 +437,9 @@ $('.iii').attr('style', hexToFilter("#ffa000"));
 
 function decodeSentence()
 {
+  var msg = new SpeechSynthesisUtterance(toDisplaySentences[sentence_index]);
+  window.speechSynthesis.speak(msg);
+  
     let images = Array.prototype.slice.call(document.getElementById("space").getElementsByTagName("img"));
     for(let i=0;i<images.length;i++)
       images[i].remove();
