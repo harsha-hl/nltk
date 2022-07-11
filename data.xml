@@ -8,12 +8,14 @@
     <obj name="pipette"> pipette </obj>
     <obj name="burner"> bunsenburner </obj>
     <obj name="roundbottomflask"> roundbottomflask </obj>
-    <obj name="conicalflask"> conicalflask </obj>
+    <obj name="flask"> conicalflask </obj>
     <obj name="tripodstand"> tripodstand </obj>
     <obj name="wiregauze"> wiregauze </obj>
     <obj name="tube"> testtube </obj>
     <obj name="paper"> paper </obj>
     <obj name="precipitate">ppt </obj>
+    <obj name="dish"> petri </obj>
+    <obj name="container"> container </obj>
 </noun>
 <position>
     <pos name= "under" x="400" y="-710"> under </pos>
@@ -33,11 +35,13 @@
     <img name="pipette" src=""> pipette </img>
     <img name="burner" src="static/bunsen_burner.png"> bunsenburner </img>
     <img name="roundbottomflask" src="static/round_bottom_flask.png"> roundbottomflask </img>
-    <img name="conicalflask" src="static/conical.png"> conicalflask </img>
+    <img name="flask" src="static/conical.png"> conicalflask </img>
     <img name="tripodstand" src="static/tripod.png"> tripodstand </img>
     <img name="wiregauze" src=""> wiregauze </img>
     <img name="tube" src="static/fullTestTube.png"> testtube </img>
     <img name="precipitate" src="static/pptTestTube.png"> ppt </img>
+    <img name="dish" src="static/beaker.png"> petri </img>
+    <img name="container" src="static/beaker.png"> container </img>
 </image>
 
 <verbs>
@@ -52,7 +56,5 @@
     <colour name="brown" hex="#5C4033"> brown </colour>
 </colours>
 
-<others>
-    
 </data>    
 
