@@ -7,7 +7,12 @@ import json
 app = Flask(__name__)  
 
 @app.route("/")
-def hello_world():
+def home():
+  return render_template("h.html")  
+
+
+@app.route("/experiment")
+def experiment():
   objects = []    # a Python object (dict):
   new=[]
   check_box=[] 
@@ -36,7 +41,6 @@ def hello_world():
     new.append(objects)
     check_box.append(objects)
     objects=[]
-  print("\n\n\neeeeeeeeeeeeee\n\n\n",new)
     
   #return render_template("index.html", objs = objects)
   return render_template("index.html", objs = new, para=para,abc=check_box, instruments = apparatus)  
