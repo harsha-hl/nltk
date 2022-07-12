@@ -34,9 +34,9 @@ text3 = '''
 Light brown gas with a pungent smell is evolved from the test tube.
 The anion maybe Nitrate.
 Add Iron(II) Sulphate from beaker to the test tube containing salt solution.
-Add acid (H2SO4) from the container to the corners of the test tube
-A Brown ring is formed at the junction of the acid and the solution in the test tube.
-Nitrate is confirmed
+Add acid (H2SO4) from the container to the corners of the test tube. 
+ A Brown ring is formed at the junction of the acid and the solution in the test tube.
+Nitrate is confirmed. 
 
 Add a few drops of Hcl from container to the test tube containing salt solution.
 No change observed.
@@ -44,11 +44,11 @@ To the above solution in test tube, pass H2S gas.
 No changes observed.
 Add solid NH4Cl to the test tube containing salt solution and then add excess NH4OH from conical flask.
 Add ammonium carbonate, ammonium chloride, and ammonium hydroxide to the original solution in the test tube.
-White precipitate is obtained in the test tube.
-Cation maybe Barium, Strontium or Calcium
+Black precipitate is obtained in the test tube.
+Cation maybe Barium, Strontium or Calcium.
 Add K2Cr2O4 from conical flask to test tube containing salt solution. A yellow precipitate is formed.
 CAtion maybe Ba2+
-Make a paste of the salt by mixing it in a petri dish. Add a few drops of concentrated hydrochloric acid. Now skim off some of the paste with a glass rod and expose it to a Bunsen Burner’s flame.
+Make a paste of the salt by mixing it in a petri dish. Add a few drops of concentrated hydrochloric acid. Now skim off some of the paste with a glass rod and expose it above a Bunsen Burner’s flame.
 Green coloured flame confirms Ba2+ as cation.
 
 '''
@@ -56,7 +56,7 @@ Green coloured flame confirms Ba2+ as cation.
 text2 = '''
 Pour few drops of Phenolpthalein solution from container to conical flask containing HCl.
 Fill the burette with NaOH (titrant) of known concentration and place it over the conical flask. 
-Slowly add NaOH solution from burette to the conical flask till equivalence point is reached and HCl acid is completely neutralized. 
+Slowly drop it over the NaOH solution from burette to the conical flask till equivalence point is reached and HCl acid is completely neutralized. 
 Upon neutralisation, the solution in conical flask becomes purple in colour confirming the end point of the reaction.
 The concentration of HCl analyte is calculated by measuring the amount of NaOH added. 
 '''
@@ -190,14 +190,14 @@ def getObjects(line):
         except:
            pass
         if posx == "" or posy=="":
-            posx= "700"
+            posx= "500"
             posy= "-600"
         if verb in check_verb:
             src="static/"+name+"_pour.png"
-            posx="510"        
+            posx="310"        
             posy="-425"       
         if name=='precipitate':
-            posx="706"
+            posx="506"
             posy="-593"
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
@@ -221,14 +221,17 @@ def apparatus():
 
 
 def sen():
-    abc = sent_tokenize(text)
+    #abc = sent_tokenize(text)
+    abc = sent_tokenize(text3)
     sent_len=len(abc)
     return(sent_len) 
 
 
 def main():         
-    sentence = sent_tokenize(text)
-    print(sent_tokenize(text))
+    #sentence = sent_tokenize(text)
+    sentence = sent_tokenize(text3)
+    #print(sent_tokenize(text))
+    print(sent_tokenize(text3))
     obj=[]
     for i in sentence:
         x=getObjects(i)

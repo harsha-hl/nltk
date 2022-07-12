@@ -21,14 +21,14 @@
     <obj name="rod"> rod </obj>
 </noun>
 <position>
-    <pos name= "under" x="700" y="-710"> under </pos>
-    <pos name= "over" x="700" y="-450"> over </pos>
-    <pos name= "above" x="700" y="-450"> above </pos>
-    <pos name= "below" x="700" y="-710"> below </pos>
-    <pos name= "near" x="700" y="-600"> near </pos>
-    <pos name= "in" x="700" y="-600"> in </pos>
-    <pos name= "inside" x="700" y="-600"> in </pos>
-    <pos name= "on" x="700" y="-450"> on </pos>
+    <pos name= "under" x="500" y="-710"> under </pos>
+    <pos name= "over" x="500" y="-450"> over </pos>
+    <pos name= "above" x="500" y="-450"> above </pos>
+    <pos name= "below" x="500" y="-710"> below </pos>
+    <pos name= "near" x="500" y="-600"> near </pos>
+    <pos name= "in" x="500" y="-600"> in </pos>
+    <pos name= "inside" x="500" y="-600"> in </pos>
+    <pos name= "on" x="500" y="-450"> on </pos>
     
 </position>
 
@@ -43,11 +43,11 @@
     <img name="wiregauze" src=""> wiregauze </img>
     <img name="tube" src="static/fullTestTube.png"> testtube </img>
     <img name="precipitate" src="static/pptTestTube.png"> ppt </img>
-    <img name="dish" src="static/beaker.png"> petri </img>
+    <img name="dish" src="static/dish.png"> petri </img>
     <img name="container" src="static/beaker.png"> container </img>
-    <img name="gas" src="static/beaker.png"> gas </img>
+    <img name="gas" src="static/gas.png"> gas </img>
     <img name="ring" src="static/beaker.png"> ring </img>
-    <img name="rod" src="static/beaker.png"> rod </img>
+    <img name="rod" src="static/rod.png"> rod </img>
 </image>
 
 <verbs>

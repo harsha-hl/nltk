@@ -306,7 +306,8 @@ function hexToFilter(hex){
 //var counter=0;
 var sentence_index = 0, numOfSentences, sentences=[], o, paragraph, toDisplaySentences;
 //let x= 100;
-function position(x,y,deg,path,hex_image, len){
+function position(x,y,deg,path,hex_image, len)
+{
   const space = document.getElementById("space");
   const img1 = document.createElement('img');
   img1.src = path;
@@ -314,6 +315,7 @@ function position(x,y,deg,path,hex_image, len){
 //  img1.style.height = "200px";
  //img1.style.height = "auto";
  var width_ppt = (path).localeCompare("static/pptTestTube.png");
+ /*
  if(width_ppt===0)
  {
   console.log("i am in the width loop");
@@ -325,8 +327,9 @@ function position(x,y,deg,path,hex_image, len){
   console.log("i am in the else loop");
   img1.style.height = "200px";
   img1.style.width = "auto";
- }
-
+ }*/
+img1.style.width = "auto";
+img1.style.height = "auto";
 // img1.style.width = "auto";
   img1.style.position = "absolute";
   img1.style.left = x + "px";
@@ -354,6 +357,7 @@ function position_new(x,y,deg,path, len)
 //  img1.style.height = "200px";
  //img1.style.height = "auto";
  var width_ppt = (path).localeCompare("static/pptTestTube.png");   //put some else
+ /*
  if(width_ppt===0)
  {
   console.log("i am in the width loop");
@@ -366,7 +370,9 @@ function position_new(x,y,deg,path, len)
   img2.style.height = "200px";
   img2.style.width = "auto";
  }
-
+*/
+img2.style.width = "auto";
+img2.style.height = "auto";
 // img1.style.width = "auto";
   img2.style.position = "absolute";
   img2.style.left = x + "px";
@@ -503,11 +509,59 @@ function decodeSentence()
 
           var hex_image_new=sents[t].colour;
                   console.log("This is hex of image"+hex_image_new);
-                  position(x_new,y_new,z,sents[t].src,hex_image_new, k);
+                  position(x_new,y_new,z,sents[t].src,hex_image_new, t);
 
 
 
-                  
+                  if(sents[t].name === 'gas')
+                  {
+                    console.log("in sents for gas");
+                    var ka = "-380";
+                    position(x_new,ka,z,sents[t].src,hex_image_new, t);
+                  }
+                  else{
+                  position(x_new,y_new,z,sents[t].src,hex_image_new, t);
+                  }
+
+
+                  var ppt_outline = (sents[t].name).localeCompare("precipitate");
+                // var a_verb = (sentence[p].verb).localeCompare("pour");
+                 if(ppt_outline!==0)      /////////////////////////////////////////////////////////
+                 {
+
+                  if(sents[t].verb === 'pour' || sents[t].verb === 'add')
+                  {
+                  var src_new = "static/new_"+sents[t].name+"_pour.png";    /////////////////////////////////////////////////////////
+                position_new((x_new),y_new,z,src_new, t);  ///////////////////////////////////////////////////////
+                  }
+
+
+
+                   else
+                   {
+
+                    if(sents[t].name === "gas")
+                   {
+                    var src_noverb_new="static/new_"+sents[t].name+".png";
+                    position_new(x_new,-380,z,src_noverb_new,t);
+                   }
+                   else{
+                     var src_noverb_new="static/new_"+sents[t].name+".png";
+                     position_new(x_new,y_new,z,src_noverb_new,t);
+                   
+                    }
+                  }
+                   
+                }
+               
+               
+
+
+
+
+
+
+
 
 
         }
@@ -528,23 +582,59 @@ function decodeSentence()
                   console.log(" heyyy i am in  sentence[p].src"+sentence[p].src);
                   var hex_image=sentence[p].colour;
                   console.log("This is hex of image"+hex_image);
+                  if(sentence[p].name === 'gas')
+                  {
+                    position(x,-380,z,sentence[p].src,hex_image, k);
+                  }
+                  else{
                   position(x,y,z,sentence[p].src,hex_image, k);
-                  
+/*
+                  if(sentence[p].name === 'burette')
+                  {
+                     var buu = "530";
+                     position(buu,y,z,sentence[p].src,hex_image,k);
+                  }
+                  else{
+                  position_new(x,y,z,sentence[p].src,hex_image,k);
+                  }
+*/
+                  }
 
 
                   var ppt_outline = (sentence[p].name).localeCompare("precipitate");
                  var a_verb = (sentence[p].verb).localeCompare("pour");
                  if(ppt_outline!==0)      /////////////////////////////////////////////////////////
                  {
-                   if(a_verb!==0)
+
+                  if(sentence[p].verb === 'pour' || sentence[p].verb === 'add')
+                  {
+                  var src_new = "static/new_"+sentence[p].name+"_pour.png";    /////////////////////////////////////////////////////////
+                position_new((x),y,z,src_new, k);  ///////////////////////////////////////////////////////
+                  }
+
+
+
+                   else
                    {
-                     var src_noverb_new="static/new_"+sentence[p].name+".png";
-                     position_new(x,y,z,src_noverb_new,k);
+
+                    if(sentence[p].name === "gas")
+                   {
+                    var src_noverb_new="static/new_"+sentence[p].name+".png";
+                    position_new(x,-380,z,src_noverb_new,k);
                    }
                    else{
-                   var src_new = "static/new_"+sentence[p].name+"_pour.png";    /////////////////////////////////////////////////////////
-                 position_new((x),y,z,src_new, k);  ///////////////////////////////////////////////////////
+                     var src_noverb_new="static/new_"+sentence[p].name+".png";
+                     if(sentence[p].name === 'burette')
+                     {
+                        var bu = "530";
+                        position_new(bu,y,z,src_noverb_new,k);
+                     }
+                     else{
+                     position_new(x,y,z,src_noverb_new,k);
+                     }
                    }
+                  }
+                   
                }
               
     }
