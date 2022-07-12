@@ -446,6 +446,7 @@ function decodeSentence()
       images[i].remove();
     
     document.getElementById("val").innerHTML='';
+    document.getElementById("appa").innerHTML='';
     document.getElementById("statement").innerHTML = toDisplaySentences[sentence_index];
     let sentence = sentences[sentence_index];
     console.log("DEBUGGGgGGGGGGGGG");
@@ -466,6 +467,13 @@ function decodeSentence()
       document.getElementById("val").innerHTML+=JSON.stringify(sentence, null, 2);
     }
 
+    for(let i=0; i<k; i++){
+      var name=sentence[i].name;
+      if(name !== 'precipitate')
+      {
+      document.getElementById("appa").innerHTML+='<br />'+'=> '+name+'<br />';
+      }
+    }
 
     if(sentence.length===0)
     {
@@ -496,6 +504,12 @@ function decodeSentence()
           var hex_image_new=sents[t].colour;
                   console.log("This is hex of image"+hex_image_new);
                   position(x_new,y_new,z,sents[t].src,hex_image_new, k);
+
+
+
+                  
+
+
         }
     }
      else

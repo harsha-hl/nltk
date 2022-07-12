@@ -9,6 +9,7 @@
 </head>
 <body>
     <br><br>
+    <!--
     <img src="static/emptyTestTube.png" class="iii" height="200px"> 
     
 
@@ -20,7 +21,7 @@
         <img class="image2" src="static/pptTestTube.png" height="20px">          
     </div> 
        
-    <img src="static/fullTestTube.png" class="iii" height="200px" >
+    <img src="static/fullTestTube.png" class="iii" height="200px" >    -->
 
     
 
@@ -31,15 +32,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@592&family=Merienda&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@592&family=Merienda&display=swap" rel="stylesheet">
+    <nav class="navbar">
+        <img class="logo">
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="templates/exp.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+    </nav>
+
+
     <div id="space">
         <h1 class="heading">Chemistry Exp</h1>
         <p id="statement"></p>
     </div>
-    <div>
+
+
+   
+    <div id="apparatus">
+        <h2 id="head_appa"> APPARATUS USED </h2> 
+        <ul>
+        <p id="appa"></p>
+        </ul>
+    </div>
+
+
+    <div id="b">
         <button onclick="prevSentence()" class="butn">Previous</button>
+        <div class="space_butn"></div>
         <button onclick="nextSentence()" class="butn">Next</button>
     </div>
 
+
+    <div id="text">
+        <p id="statement"></p>
+    </div>
 
     <form id="formm">
         <label class="switch">
@@ -51,7 +83,9 @@
     
     <div id="boxes" style="display:none;" value="{{abc}}">
         <h2 >Apparatuses Used</h3>
+            
         <p id="val"> </p>
+    
         <!--{% for a in abc %}
             <ul>
             <li>{{a}}</li>

@@ -3,10 +3,50 @@ body{
     margin-top: -16px;
     background-color: beige;
     background-color: #ffffff;
-    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
-
+   /* background-image: url("https://www.transparenttextures.com/patterns/gplay.png");*/
+   /* background-image: url("https://www.transparenttextures.com/patterns/gplay.png");*/
+    background-image: url("https://transparenttextures.com/patterns/brushed-alum-dark.png");
 }
 
+
+
+.navbar{
+	position: fixed;
+	height: 80px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.4);
+}
+.navbar .logo{
+	width: 140px;
+	height: auto;
+	padding: 20px 100px;
+}
+.navbar ul{
+	float: right;
+	margin-right: 20px;
+}
+.navbar ul li{
+	list-style: none;
+	margin: 0 8px;
+	display: inline-block;
+	line-height: 80px;
+}
+.navbar ul li a{
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	padding: 6px 13px;
+	text-decoration: none;
+	transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+	background: purple;
+	border-radius: 2px;
+}
+/*
 .heading{
     font-family: 'Merienda', cursive;
     text-align: center;
@@ -14,10 +54,58 @@ body{
     margin: 0 ;
     font-size: 50px;
     padding-top: 30px;
+}*/
+
+.heading{
+   /*font-family: 'Roboto Condensed', sans-serif;*/
+   position: relative;
+   left: 35%;
+   right:45%;
+   top:20px;
+ /*  left:510px;*/
+ /*text-align: center;*/
+ margin: auto;
+ width:50%;
+ 
+   color: #641864;
+   margin: 0 ;
+   font-size: 60px;
+   padding-top: 60px;
+   display: inline-block;
+   font-weight:lighter;
+   /*font-family: 'Tinos', serif;*/
+   font-family: 'Merienda', cursive;
+}
+.heading:after {
+  content: '';
+  position: absolute;
+  width: 65%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom:0;
+  left:0;
+  background-color: #641864;
+ /* transform-origin: 10px;*/
+ transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
-.butn{
-    font-weight: lighter;
+.heading:hover:after {
+  transform: scaleX(1);
+  transform-origin: 30px;
+}
+
+.space_butn {
+  width: 200px;
+  height: auto;
+  display: inline-block;
+}
+.butn{/*
+  position: relative;
+    top:40px;  
+    bottom: 70px;*/
+  
+  font-weight: lighter;
     border: 1px solid rgb(226, 213, 218);;
     padding: 15px 30px;
     font-size: 30px;
@@ -28,15 +116,24 @@ body{
     /* margin: 100px 0 0 193px; */
     transition: transform 0.5s ease;
     font-family: 'Merienda', cursive;
+    display: inline-block;
+    margin: 40px;
+position: relative;
+left: -5%;
+    
     
 }
+#b{
+  padding-left: 370px;
+  }
 
 .butn:hover{
     transition-duration: 0.5s;
-    transform: translateY(-5px);
+    transform: translateY(-7px);
     cursor: pointer;
     background-color: black;
-    color: rgb(226, 213, 218);;
+    color: rgb(226, 213, 218);
+   /* margin: 0 auto;*/
 }
 
 #space{
@@ -47,8 +144,56 @@ body{
     text-align: center;
     font-size: 35px;
     font-family: 'Merienda', cursive;
+    text-shadow: 2px 2px 5px #641864;
+  color: rgb(0, 0, 0);
+
+}
+/*
+#statement:hover{
+  padding-top: 10px;
+  cursor: pointer;
+ text-shadow: 2px 2px 5px #641864;
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+}   */
+
+
+
+
+
+#apparatus{
+  position: absolute;
+  
+  top:490px;
+  left:65%;
+  font-size: 20px;
+  padding: 5px;
+  border: 4px solid black;
+  border-radius: 25px;
+background-color: rgb(226, 213, 218);
+  width: 300px;
+  min-height: 370px;
+}
+#apparatus:hover{
+  transition-duration: 0.5s;
+    transform: translateY(-20px);
+    cursor: pointer;
+    background-color: black;
+    color: rgb(226, 213, 218);
 }
 
+#appa{
+  font-size: 30px;
+  font-family: 'Merienda', cursive;
+}
+#head_appa{
+  font-size: 35px;
+  /*
+  font-family: 'Tinos', serif;
+  */
+  font-family: 'Merienda', cursive;
+  text-align: center;
+}
 
 #formm{
     position:relative;
@@ -165,3 +310,19 @@ position:relative;
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    z-index: 3;
+    border-color: #007bff !important;
+}
+.cards{
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+  /**********************************************************************************************/
