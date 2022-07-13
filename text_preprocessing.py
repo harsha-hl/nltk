@@ -83,7 +83,7 @@ def getObjects(line):
                 temp=i[0]
                 print("temp is NN2",temp)
                 count+=1
-        elif i[1]=='IN':
+        if i[1]=='IN':
             p=bs.find('pos',{'name':i[0]})
             print("P is:",i[0],p,temp)
             
@@ -103,7 +103,7 @@ def getObjects(line):
                     positiony_temp=p.get('y')
                     print(positiony_temp,positionx_temp)
 
-        elif i[1][0]=='V' or i[1]=='NNS':
+        if i[1][0]=='V' or i[1]=='NNS' or i[1] == 'JJ':
             if temp!="" and verb_count==0:
                 verbs[temp]=i[0]
             elif verb_count==0:
@@ -186,7 +186,7 @@ def apparatus():
 
 
 def sen():
-    #abc = sent_tokenize(text)
+    #abc = sent_tokenize(text2)
     abc = sent_tokenize(text3)
     sent_len=len(abc)
     return(sent_len) 
