@@ -517,13 +517,13 @@ function decodeSentence()
                   {
                     console.log("in sents for gas");
                     var ka = "-380";
-                    var kax = "500";
+                    var kax = "700";
                     position(kax,ka,z,sents[t].src,hex_image_new, t);
                   }
 
                   else if(sents[t].name === 'burette')
                   {
-                     var buu = "530";
+                     var buu = "730";
                      position(buu,y,z,sents[t].src,hex_image,t);
                   }
                   else{
@@ -557,7 +557,7 @@ function decodeSentence()
                      var src_noverb_new="static/new_"+sents[t].name+".png";
                      if(sents[t].name === 'burette')
                      {
-                       var bb = "530";
+                       var bb = "730";
                        position_new(bb,y_new,z,src_noverb_new,t);
                      }
                      else{
@@ -599,13 +599,13 @@ function decodeSentence()
                   if(sentence[p].name === 'gas')
                   {
                     var ga = "-380";
-                    var gax = "500";
+                    var gax = "700";
                     position(gax,ga,z,sentence[p].src,hex_image, k);
                   }
 
                   else if(sentence[p].name === 'burette')
                   {
-                     var buu = "530";
+                     var buu = "730";
                      position(buu,y,z,sentence[p].src,hex_image,k);
                   }
                   else{
@@ -650,7 +650,7 @@ function decodeSentence()
                      
                      if(sentence[p].name === 'burette')
                      {
-                        var bu = "530";
+                        var bu = "730";
                         position_new(bu,y,z,src_noverb_new,k);
                      }
                      else{
