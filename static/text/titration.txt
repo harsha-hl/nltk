@@ -1,0 +1,5 @@
+Pour few drops of Phenolpthalein solution from container to conical flask containing HCl.
+Fill the burette with NaOH (titrant) of known concentration and place it over the conical flask. 
+Slowly drop it over the NaOH solution from burette to the conical flask till equivalence point is reached and HCl acid is completely neutralized. 
+Upon neutralisation, the solution in conical flask becomes purple in colour confirming the end point of the reaction.
+The concentration of HCl analyte is calculated by measuring the amount of NaOH added. 

@@ -15,54 +15,14 @@ from bs4 import BeautifulSoup
 
 a = []
 global text, text2, text3
+f = open("static/text/titration.txt", "r")
+text = f.read()
 
-text = '''
-Pour dilute HCl from a beaker into a test tube containing salt solution.
-    No precipitate formed in test tube indicating absence of Pb2+. 
-    Pour H2S from beaker to test tube. 
-    Black precipitate is formed in test tube indicating presence of Cu2+ or Pb2+.
-    Pour HNO3 from conical flask to test tube.
-    Solution in test tube turns green.
-    Divide the solution into two and pour NH4OH solution from beaker to test tube containing one part. 
-    Solution in test tube turns blue confirming presence of Cu2+.
-    Pour K4[Fe(CN)6] solution from conicalflask to test tube containing second part. 
-    Chocolate brown precipitate of Copper ferrocyanide is formed in test tube confirming the presence of Cu2+ ions.
-    '''
+f = open("static/text/basic_radical.txt", "r")
+text2= f.read()
 
-text3 = '''
- Add a few drops of dilute H2SO4 (sulfuric acid) from conical flask to a small quantity of the salt in a test tube.
-Light brown gas with a pungent smell is evolved from the test tube.
-The anion maybe Nitrate.
-Add Iron(II) Sulphate from beaker to the test tube containing salt solution.
-Add acid (H2SO4) from the container to the corners of the test tube. 
- A Brown ring is formed at the junction of the acid and the solution in the test tube.
-Nitrate is confirmed. 
-
-Add a few drops of Hcl from container to the test tube containing salt solution.
-No change observed.
-To the above solution in test tube, pass H2S gas.
-No changes observed.
-Add solid NH4Cl to the test tube containing salt solution and then add excess NH4OH from conical flask.
-Add ammonium carbonate, ammonium chloride, and ammonium hydroxide to the original solution in the test tube.
-Black precipitate is obtained in the test tube.
-Cation maybe Barium, Strontium or Calcium.
-Add K2Cr2O4 from conical flask to test tube containing salt solution. A yellow precipitate is formed.
-CAtion maybe Ba2+
-Make a paste of the salt by mixing it in a petri dish. Add a few drops of concentrated hydrochloric acid. Now skim off some of the paste with a glass rod and expose it above a Bunsen Burner’s flame.
-Green coloured flame confirms Ba2+ as cation.
-
-'''
-
-text2 = '''
-Pour few drops of Phenolpthalein solution from container to conical flask containing HCl.
-Fill the burette with NaOH (titrant) of known concentration and place it over the conical flask. 
-Slowly drop it over the NaOH solution from burette to the conical flask till equivalence point is reached and HCl acid is completely neutralized. 
-Upon neutralisation, the solution in conical flask becomes purple in colour confirming the end point of the reaction.
-The concentration of HCl analyte is calculated by measuring the amount of NaOH added. 
-'''
-
-
-
+f= open("static/text/salt_analysis.txt", "r")
+text3 = f.read()
 
 def getObjects(line):
     line = re.sub(r"[^a-zA-Z0-9]", " ", line.lower())
@@ -197,8 +157,12 @@ def getObjects(line):
             posx="310"        
             posy="-425"       
         if name=='precipitate':
-            posx="506"
+            posx="507"
             posy="-593"
+        if name == 'ring':
+            posx="470"
+        if name == "burner" and colour=="#cccccc":
+            colour = "#e25822"
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
         posx=""; posy=""
         verb="default"
@@ -222,16 +186,16 @@ def apparatus():
 
 def sen():
     #abc = sent_tokenize(text)
-    abc = sent_tokenize(text)
+    abc = sent_tokenize(text3)
     sent_len=len(abc)
     return(sent_len) 
 
 
 def main():         
     #sentence = sent_tokenize(text)
-    sentence = sent_tokenize(text)
+    sentence = sent_tokenize(text3)
     #print(sent_tokenize(text))
-    print(sent_tokenize(text))
+    print(sent_tokenize(text3))
     obj=[]
     for i in sentence:
         x=getObjects(i)
