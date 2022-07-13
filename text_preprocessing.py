@@ -222,16 +222,16 @@ def apparatus():
 
 def sen():
     #abc = sent_tokenize(text)
-    abc = sent_tokenize(text3)
+    abc = sent_tokenize(text)
     sent_len=len(abc)
     return(sent_len) 
 
 
 def main():         
     #sentence = sent_tokenize(text)
-    sentence = sent_tokenize(text3)
+    sentence = sent_tokenize(text)
     #print(sent_tokenize(text))
-    print(sent_tokenize(text3))
+    print(sent_tokenize(text))
     obj=[]
     for i in sentence:
         x=getObjects(i)
