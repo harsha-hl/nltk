@@ -111,7 +111,8 @@ def getObjects(line):
                 print("Verb_temp", verb_temp)
             verb_count+=1
 
-        elif i[1]=="JJ":
+        if i[1]=="JJ" or i[1]=='IN':
+            print(i[0],"This is colourrrrrrrrrr")
             cc = bs.find('colour', {'name':i[0]})
 
             if cc != None:
@@ -150,17 +151,17 @@ def getObjects(line):
         except:
            pass
         if posx == "" or posy=="":
-            posx= "500"
+            posx= "700"
             posy= "-600"
         if verb in check_verb:
             src="static/"+name+"_pour.png"
-            posx="310"        
+            posx="510"        
             posy="-425"       
         if name=='precipitate':
-            posx="507"
+            posx="707"
             posy="-593"
         if name == 'ring':
-            posx="470"
+            posx="670"
         if name == "burner" and colour=="#cccccc":
             colour = "#e25822"
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})

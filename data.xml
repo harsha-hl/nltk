@@ -21,14 +21,14 @@
     <obj name="rod"> rod </obj>
 </noun>
 <position>
-    <pos name= "under" x="500" y="-710"> under </pos>
-    <pos name= "over" x="500" y="-450"> over </pos>
-    <pos name= "above" x="500" y="-450"> above </pos>
-    <pos name= "below" x="500" y="-710"> below </pos>
-    <pos name= "near" x="500" y="-600"> near </pos>
-    <pos name= "in" x="500" y="-600"> in </pos>
-    <pos name= "inside" x="500" y="-600"> in </pos>
-    <pos name= "on" x="500" y="-450"> on </pos>
+    <pos name= "under" x="700" y="-710"> under </pos>
+    <pos name= "over" x="700" y="-450"> over </pos>
+    <pos name= "above" x="700" y="-450"> above </pos>
+    <pos name= "below" x="700" y="-710"> below </pos>
+    <pos name= "near" x="700" y="-600"> near </pos>
+    <pos name= "in" x="700" y="-600"> in </pos>
+    <pos name= "inside" x="700" y="-600"> in </pos>
+    <pos name= "on" x="700" y="-450"> on </pos>
     
 </position>
 
