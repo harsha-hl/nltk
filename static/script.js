@@ -509,7 +509,7 @@ function decodeSentence()
 
           var hex_image_new=sents[t].colour;
                   console.log("This is hex of image"+hex_image_new);
-                  position(x_new,y_new,z,sents[t].src,hex_image_new, t);
+                 // position(x_new,y_new,z,sents[t].src,hex_image_new, t);
 
 
 
@@ -517,7 +517,14 @@ function decodeSentence()
                   {
                     console.log("in sents for gas");
                     var ka = "-380";
-                    position(x_new,ka,z,sents[t].src,hex_image_new, t);
+                    var kax = "500";
+                    position(kax,ka,z,sents[t].src,hex_image_new, t);
+                  }
+
+                  else if(sents[t].name === 'burette')
+                  {
+                     var buu = "530";
+                     position(buu,y,z,sents[t].src,hex_image,t);
                   }
                   else{
                   position(x_new,y_new,z,sents[t].src,hex_image_new, t);
@@ -526,7 +533,8 @@ function decodeSentence()
 
                   var ppt_outline = (sents[t].name).localeCompare("precipitate");
                 // var a_verb = (sentence[p].verb).localeCompare("pour");
-                 if(ppt_outline!==0)      /////////////////////////////////////////////////////////
+                 //if(ppt_outline!==0)      /////////////////////////////////////////////////////////
+                 if(sents[t].name !== 'precipitate' && sents[t].name !== 'gas' && sents[t].name !== 'ring')
                  {
 
                   if(sents[t].verb === 'pour' || sents[t].verb === 'add')
@@ -540,21 +548,29 @@ function decodeSentence()
                    else
                    {
 
-                    if(sents[t].name === "gas")
-                   {
-                    var src_noverb_new="static/new_"+sents[t].name+".png";
-                    position_new(x_new,-380,z,src_noverb_new,t);
-                   }
-                   else{
+                   // if(sents[t].name === "gas")
+                   //{
+                    //var src_noverb_new="static/new_"+sents[t].name+".png";
+                    //position_new(x_new,-380,z,src_noverb_new,t);
+                  // }
+                   //else{
                      var src_noverb_new="static/new_"+sents[t].name+".png";
+                     if(sents[t].name === 'burette')
+                     {
+                       var bb = "530";
+                       position_new(bb,y_new,z,src_noverb_new,t);
+                     }
+                     else{
                      position_new(x_new,y_new,z,src_noverb_new,t);
-                   
-                    }
+                     }
+                    //}
                   }
                    
                 }
                
                
+              }
+            }
 
 
 
@@ -563,9 +579,7 @@ function decodeSentence()
 
 
 
-
-        }
-    }
+      
      else
      {
 
@@ -584,7 +598,15 @@ function decodeSentence()
                   console.log("This is hex of image"+hex_image);
                   if(sentence[p].name === 'gas')
                   {
-                    position(x,-380,z,sentence[p].src,hex_image, k);
+                    var ga = "-380";
+                    var gax = "500";
+                    position(gax,ga,z,sentence[p].src,hex_image, k);
+                  }
+
+                  else if(sentence[p].name === 'burette')
+                  {
+                     var buu = "530";
+                     position(buu,y,z,sentence[p].src,hex_image,k);
                   }
                   else{
                   position(x,y,z,sentence[p].src,hex_image, k);
@@ -603,8 +625,9 @@ function decodeSentence()
 
                   var ppt_outline = (sentence[p].name).localeCompare("precipitate");
                  var a_verb = (sentence[p].verb).localeCompare("pour");
-                 if(ppt_outline!==0)      /////////////////////////////////////////////////////////
-                 {
+                // if(ppt_outline!==0)      /////////////////////////////////////////////////////////
+                if(sentence[p].name !== 'precipitate' && sentence[p].name !== 'gas' && sentence[p].name !== 'ring') 
+                {
 
                   if(sentence[p].verb === 'pour' || sentence[p].verb === 'add')
                   {
@@ -617,13 +640,14 @@ function decodeSentence()
                    else
                    {
 
-                    if(sentence[p].name === "gas")
-                   {
-                    var src_noverb_new="static/new_"+sentence[p].name+".png";
-                    position_new(x,-380,z,src_noverb_new,k);
-                   }
-                   else{
+                   // if(sentence[p].name === "gas")
+                   //{
+                    //var src_noverb_new="static/new_"+sentence[p].name+".png";
+                    //position_new(x,-380,z,src_noverb_new,k);
+                   //}
+                   //else{
                      var src_noverb_new="static/new_"+sentence[p].name+".png";
+                     
                      if(sentence[p].name === 'burette')
                      {
                         var bu = "530";
@@ -640,5 +664,5 @@ function decodeSentence()
     }
   
 }
-}
+
 

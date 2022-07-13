@@ -46,7 +46,7 @@
     <img name="dish" src="static/dish.png"> petri </img>
     <img name="container" src="static/beaker.png"> container </img>
     <img name="gas" src="static/gas.png"> gas </img>
-    <img name="ring" src="static/beaker.png"> ring </img>
+    <img name="ring" src="static/ring.png"> ring </img>
     <img name="rod" src="static/rod.png"> rod </img>
 </image>
 
