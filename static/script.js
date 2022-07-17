@@ -517,15 +517,16 @@ function decodeSentence()
                   {
                     console.log("in sents for gas");
                     var ka = "-380";
-                    var kax = "700";
+                    var kax = "500";
                     position(kax,ka,z,sents[t].src,hex_image_new, t);
                   }
 
                   else if(sents[t].name === 'burette')
                   {
-                     var buu = "730";
+                     var buu = "530";
                      position(buu,y,z,sents[t].src,hex_image,t);
                   }
+                  
                   else{
                   position(x_new,y_new,z,sents[t].src,hex_image_new, t);
                   }
@@ -557,7 +558,7 @@ function decodeSentence()
                      var src_noverb_new="static/new_"+sents[t].name+".png";
                      if(sents[t].name === 'burette')
                      {
-                       var bb = "730";
+                       var bb = "530";
                        position_new(bb,y_new,z,src_noverb_new,t);
                      }
                      else{
@@ -599,16 +600,24 @@ function decodeSentence()
                   if(sentence[p].name === 'gas')
                   {
                     var ga = "-380";
-                    var gax = "700";
+                    var gax = "500";
                     position(gax,ga,z,sentence[p].src,hex_image, k);
                   }
 
                   else if(sentence[p].name === 'burette')
                   {
-                     var buu = "730";
+                     var buu = "530";
                      position(buu,y,z,sentence[p].src,hex_image,k);
                   }
+                  
                   else{
+                    ////////////////////////////////////////////////////
+                    /*
+                    if(sentence[p].name === 'burner')
+                    {
+                      fire_func();
+                    }*/
+                    //////////////////////////////////////////
                   position(x,y,z,sentence[p].src,hex_image, k);
 /*
                   if(sentence[p].name === 'burette')
@@ -650,7 +659,7 @@ function decodeSentence()
                      
                      if(sentence[p].name === 'burette')
                      {
-                        var bu = "730";
+                        var bu = "530";
                         position_new(bu,y,z,src_noverb_new,k);
                      }
                      else{
@@ -662,6 +671,20 @@ function decodeSentence()
                }
               
     }
+    /*
+    function fire_func()
+{
+  console.log("i am in fire func");
+  if(sentence[p].colour === '#e25822')
+  {
+  document.getElementById("wrapper").style.display="block";
+  }
+  else if(sentence[p].color === '#368370')
+  {
+    document.getElementById("wrappergreen").style.display="block"
+  }
+}
+*/
   
 }
 

@@ -164,13 +164,24 @@ left: -5%;
 }   */
 
 
-
+#appa_box{
+  position: absolute;
+  top:490px;
+  left:5%;
+  padding: 5px;
+  border: 4px solid black;
+  border-radius: 25px;
+background-color: rgb(226, 213, 218);
+  width: 700px;
+  min-height: 380px;
+  opacity: 0.9;
+}
 
 
 #apparatus{
   position: absolute;
   
-  top:490px;
+  top:495px;
   left:65%;
   font-size: 20px;
   padding: 5px;
@@ -178,7 +189,7 @@ left: -5%;
   border-radius: 25px;
 background-color: rgb(226, 213, 218);
   width: 300px;
-  min-height: 370px;
+  min-height: 380px;
 }
 #apparatus:hover{
   transition-duration: 0.5s;
@@ -332,3 +343,114 @@ position:relative;
 }
 
   /**********************************************************************************************/
+
+
+  .container{
+    margin:40px auto;
+    width: 30px;
+    height: 30px;
+    position:relative;
+    transform-origin:center bottom;
+    animation-name: flicker;
+    animation-duration:3ms;
+    animation-delay:200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  .flame{
+    bottom:0;
+    position:absolute;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    transform:rotate(-45deg) scale(1.5,1.5);
+  }
+  
+  .yellow{
+    left:7.5px; 
+    width: 15px;
+    height: 15px;
+    background:gold;
+    box-shadow: 0px 0px 4.5px 2px gold;
+  }
+  
+  .orange{
+    left:5px; 
+    width: 20px;
+    height: 20px;
+    background:orange;
+    box-shadow: 0px 0px 4.5px 2px orange;
+  }
+  
+  .red{
+    left:2.5px;
+    width: 25px;
+    height: 25px;
+    background:OrangeRed;
+    box-shadow: 0px 0px 2.5px 2px OrangeRed;
+  }
+  
+  .white{
+    left:7.5px; 
+    bottom:-2px;
+    width: 15px;
+    height: 15px;
+    background:white;
+    box-shadow: 0px 0px 4.5px 2px white;
+  }
+  
+  .circle{
+    border-radius: 25%;
+    position:absolute;  
+  }
+  
+  .blue{
+    width: 5px;
+    height: 5px;
+    left:12.5px;
+    bottom:-12.5px; 
+    background: SlateBlue;
+    box-shadow: 0px 0px 7.5px 5px SlateBlue;
+  }
+  
+  .black{
+    width: 40px;
+    height: 40px;
+    left:10px;
+    bottom:-60px;  
+    background: black;
+    box-shadow: 0px 0px 15px 10px black;
+  }
+  
+  @keyframes flicker{
+    0%   {transform: rotate(-1deg);}
+    20%  {transform: rotate(1deg);}
+    40%  {transform: rotate(-1deg);}
+    60%  {transform: rotate(1deg) scaleY(1.04);}
+    80%  {transform: rotate(-2deg) scaleY(0.92);}
+    100% {transform: rotate(1deg);}
+  }
+
+  .darkgreen{
+    left:2.5px;
+    width: 25px;
+    height: 25px;
+    background:rgb(12, 80, 35);
+    box-shadow: 0px 0px 2.5px 2px rgb(14, 92, 14);
+  }
+  .orange{
+    left:5px; 
+    width: 20px;
+    height: 20px;
+    background:rgb(22, 139, 58);
+    box-shadow: 0px 0px 4.5px 2px rgb(39, 163, 50);
+  }
+  .yellowgreen{
+    left:7.5px; 
+    width: 15px;
+    height: 15px;
+    background:rgb(120, 224, 72);
+    box-shadow: 0px 0px 4.5px 2px rgb(124, 158, 45);
+  }

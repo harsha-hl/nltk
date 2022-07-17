@@ -54,7 +54,7 @@ def getObjects(line):
     count=0
     temp=""
     verb_temp=""
-    positionx_temp ="700"
+    positionx_temp ="500"
     positiony_temp ="-600"
     colour_temp=""
     verb="default";posx=""; flag=0;posy=""
@@ -151,17 +151,17 @@ def getObjects(line):
         except:
            pass
         if posx == "" or posy=="":
-            posx= "700"
+            posx= "500"
             posy= "-600"
         if verb in check_verb:
             src="static/"+name+"_pour.png"
-            posx="510"        
+            posx="310"        
             posy="-425"       
         if name=='precipitate':
-            posx="707"
+            posx="507"
             posy="-593"
         if name == 'ring':
-            posx="670"
+            posx="470"
         if name == "burner" and colour=="#cccccc":
             colour = "#e25822"
         x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
@@ -197,6 +197,52 @@ def main():
     sentence = sent_tokenize(text3)
     #print(sent_tokenize(text))
     print(sent_tokenize(text3))
+    obj=[]
+    for i in sentence:
+        x=getObjects(i)
+        obj.append(x)
+    print("Final output-\n",obj)
+    return obj
+        
+main()
+
+
+
+def sen1():
+    #abc = sent_tokenize(text2)
+    abc = sent_tokenize(text2)
+    sent_len=len(abc)
+    return(sent_len) 
+
+
+def main1():         
+    #sentence = sent_tokenize(text)
+    sentence = sent_tokenize(text2)
+    #print(sent_tokenize(text))
+    print(sent_tokenize(text2))
+    obj=[]
+    for i in sentence:
+        x=getObjects(i)
+        obj.append(x)
+    print("Final output-\n",obj)
+    return obj
+        
+main()
+
+
+
+def sen2():
+    #abc = sent_tokenize(text2)
+    abc = sent_tokenize(text)
+    sent_len=len(abc)
+    return(sent_len) 
+
+
+def main2():         
+    #sentence = sent_tokenize(text)
+    sentence = sent_tokenize(text)
+    #print(sent_tokenize(text))
+    print(sent_tokenize(text))
     obj=[]
     for i in sentence:
         x=getObjects(i)
