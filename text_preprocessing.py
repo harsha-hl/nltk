@@ -13,6 +13,10 @@ from nltk.probability import FreqDist
 from bs4 import BeautifulSoup
 
 
+anion = {'nitrate': 'nitrate', 'sulphate':'sulphate', 'phosphate':'phosphate', 'chloride':'chloride', 'carbonate':'carbonate', 'cyanide':'cyanide'}
+cation = {'ferrous': 'ferrous', 'ferric':'ferric', 'sodium':'sodium', 'potassium':'potassium', 'ammonium':'ammonium', 'barium':'barium', 'strontium':'strontium','calcium':'calcium'}
+text4 = "ferrous nitrate in test tube. Pour dilute sodium chloride from a beaker into a test tube with ferrous sulphate containing salt solution." 
+
 a = []
 global text, text2, text3
 f = open("static/text/titration.txt", "r")
@@ -60,9 +64,27 @@ def getObjects(line):
     verb="default";posx=""; flag=0;posy=""
     colour="#cccccc"
     check_verb = ["add", "pour"]
-
+    chemical=""
+    chemicals={}
+    chemical_temp=""
 
     for i in tagged:
+
+        try:
+            chemical+=cation[i[0]]
+        
+        except:
+            pass
+
+        try:
+            chemical+=" " + anion[i[0]]
+            if temp!="":
+                chemicals[temp]=chemical
+            else:
+                chemical_temp = chemical
+            chemical=""
+        except:
+            pass
 
         if i[1] == 'NN':
             if bs.find('obj', {'name':i[0]}) != None:
@@ -79,7 +101,9 @@ def getObjects(line):
                     print("Temp is", temp)
                     print("Colour temp  is ", colour_temp)
                     colours[i[0]] = colour_temp
-                    colour_temp=""                    
+                    colour_temp=""   
+                if chemical_temp!= "" and temp=="":
+                    chemicals[i[0]] = chemical_temp                 
                 temp=i[0]
                 print("temp is NN2",temp)
                 count+=1
@@ -164,7 +188,7 @@ def getObjects(line):
             posx="470"
         if name == "burner" and colour=="#cccccc":
             colour = "#e25822"
-        x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy})
+        x.append({"name":name, "fill":fill,"src":src, "colour":colour,"verb":verb,"positionx":posx, "positiony":posy, "chemicals":chemicals})
         posx=""; posy=""
         verb="default"
         if i==1:
@@ -187,16 +211,16 @@ def apparatus():
 
 def sen():
     #abc = sent_tokenize(text2)
-    abc = sent_tokenize(text3)
+    abc = sent_tokenize(text4)
     sent_len=len(abc)
     return(sent_len) 
 
 
 def main():         
     #sentence = sent_tokenize(text)
-    sentence = sent_tokenize(text3)
+    sentence = sent_tokenize(text4)
     #print(sent_tokenize(text))
-    print(sent_tokenize(text3))
+    print(sent_tokenize(text4))
     obj=[]
     for i in sentence:
         x=getObjects(i)
